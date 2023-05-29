@@ -18,7 +18,7 @@ public class BaseSystems : MonoBehaviour
         m_minHealth = 0;
         m_maxHealth = 1000;
         m_currentHealth= m_maxHealth;
-
+      
         b_isDamaged = false;
         b_isSeverelyDamaged = false;
     }
