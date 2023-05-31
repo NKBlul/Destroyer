@@ -9,8 +9,6 @@ public class Cameras : MonoBehaviour
     public float mouseSensitivity = 1.0f;
     float cameraVerticalRotation = 0.0f;
 
-    bool hideCursor = true;
-
     // Start is called before the first frame update
     void Start()
     {
