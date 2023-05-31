@@ -13,10 +13,10 @@ public class BasePlayer : BaseCharacter
 
     private void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float VerticalInput = Input.GetAxis("Vertical");
-
-        movement = new Vector3(horizontalInput, 0f, VerticalInput) * m_Speed * Time.deltaTime;
-        transform.Translate(movement);
+        //float horizontalInput = Input.GetAxis("Horizontal");
+        //float VerticalInput = Input.GetAxis("Vertical");
+        //
+        //movement = new Vector3(horizontalInput, 0f, VerticalInput) * m_Speed * Time.deltaTime;
+        //transform.Translate(movement);
     }
 }

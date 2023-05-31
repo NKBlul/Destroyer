@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5542523852600405653}
   - component: {fileID: 4261052419934062573}
   - component: {fileID: 1850755057799420814}
+  - component: {fileID: 5356503988479636165}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -205,6 +206,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef0fd23f477157468427ea0519a5e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 5356503988479636165}
+  camera: {fileID: 5985336974331703683}
+--- !u!114 &5356503988479636165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985336973513828058}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78e54ed36df56844a9cb95c30906323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 4
+  maxVelocityChange: 16
 --- !u!1 &5985336974331703683
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5985336974331703686
 Transform:
   m_ObjectHideFlags: 0
