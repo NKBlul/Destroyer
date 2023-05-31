@@ -4,25 +4,13 @@ using UnityEngine;
 
 public class PlayerSetup : MonoBehaviour
 {
-    public Movement movement;
+    public PlayerController _controller;
 
-    public GameObject camera;
+    public GameObject _camera;
 
     public void IsLocalPlayer()
     {
-        movement.enabled = true;
-        camera.SetActive(true);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _controller.enabled = true;
+        _camera.SetActive(true);
     }
 }

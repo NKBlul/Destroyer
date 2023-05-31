@@ -6,7 +6,7 @@ public class BaseEnemy : BaseCharacter
 {
     private void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
+
     }
 
     private void Update()
