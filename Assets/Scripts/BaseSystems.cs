@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BaseSystems : MonoBehaviour
@@ -23,9 +24,51 @@ public class BaseSystems : MonoBehaviour
         b_isSeverelyDamaged = false;
     }
 
+    public void Destroy()
+    {
+        //
+    }
+
+    public void Damage(float damageTaken)
+    {
+        m_currentHealth -= damageTaken; 
+        
+        if (m_currentHealth <= m_minHealth)
+        {
+            Destroy();
+        }
+    }
+
+    public void is_Damaged()
+    {
+        if (b_isDamaged) 
+        { 
+            //
+        }
+
+        if (b_isSeverelyDamaged)
+        {
+            //
+        }
+    }
+
+    public void ClampHealth()
+    {
+        if (m_currentHealth > m_maxHealth) 
+        { 
+            m_currentHealth = m_maxHealth;
+        }
+
+        if (m_currentHealth <= m_minHealth)
+        {
+            Destroy();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        ClampHealth();
+        is_Damaged();   
     }
 }
