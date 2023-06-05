@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
+public enum eRoomType
+{
+	None,
+    Joined,
+    Left
+}
+
 public class RoomManager : MonoBehaviourPunCallbacks
 {
 	#region singletone
@@ -20,6 +27,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 	#endregion
+    public eRoomType roomType = eRoomType.None;
+
 	public GameObject player;
 
     [Space]
@@ -60,6 +69,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
         Debug.Log("We're connected and in a room");
 
         GameObject Player = PhotonNetwork.Instantiate(player.name, spawnPoint.position, Quaternion.identity);
-        Player.GetComponent<PlayerSetup>().IsLocalPlayer();    
-    }
+        Player.GetComponent<PlayerSetup>().IsLocalPlayer();
+
+        roomType = eRoomType.Joined;
+	}
 }

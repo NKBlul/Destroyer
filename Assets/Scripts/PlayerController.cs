@@ -44,11 +44,6 @@ public class PlayerController : MonoBehaviour
     Vector2 _currentDir;
     Vector2 _currentDirVelocity;
 
-	void Start() 
-	{
-		Init();
-	}
-
     public void Init()
     {
 		playerType = ePlayerType.Alive;

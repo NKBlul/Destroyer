@@ -30,8 +30,11 @@ public class GameManager : MonoBehaviour
 	}
 	void ModifyInit() 
 	{
-		InPlay();
-		return;
+		if (RoomManager.instance.roomType  == eRoomType.Joined)
+		{
+			InPlay();
+			return;
+		}
 	}
 	#endregion
 
@@ -39,7 +42,9 @@ public class GameManager : MonoBehaviour
 	void InPlay() 
 	{
 		Debug.Log("InPlay");
-		
+
+		PlayerController.instance.Init();
+
 		gameState = eGameState.Play;
 	}
 	void ModifyPlay() 
