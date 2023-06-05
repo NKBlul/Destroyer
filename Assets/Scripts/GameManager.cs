@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public enum eGameState : uint
 {
 	None,
-	Menu,
+	Init,
 	Play,
 	GameOver
 }
@@ -17,22 +17,21 @@ public class GameManager : MonoBehaviour
 	public eGameState gameState = eGameState.None;
 	void Start() 
 	{
-		InMenu();
+		Init();
 	}
 
-	#region FSM Menu
-	void InMenu() 
+	#region FSM Init
+	void Init() 
 	{
-		Debug.Log("InMenu - left click to start");
-		gameState = eGameState.Menu;
+		Debug.Log("Init");
+		RoomManager.instance.Init();
+
+		gameState = eGameState.Init;
 	}
-	void ModifyMenu() 
+	void ModifyInit() 
 	{
-		if (Input.GetMouseButtonDown(0)) 
-		{
-			InPlay();
-			return;
-		}
+		InPlay();
+		return;
 	}
 	#endregion
 
@@ -40,8 +39,7 @@ public class GameManager : MonoBehaviour
 	void InPlay() 
 	{
 		Debug.Log("InPlay");
-		RoomManager.instance.Init();
-
+		
 		gameState = eGameState.Play;
 	}
 	void ModifyPlay() 
@@ -78,8 +76,8 @@ public class GameManager : MonoBehaviour
 	{
 		switch (gameState) 
 		{
-			case eGameState.Menu:
-				ModifyMenu();
+			case eGameState.Init:
+				ModifyInit();
 				break;
 			case eGameState.Play:
 				ModifyPlay();
