@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum eGameState : uint
 {
@@ -22,13 +23,16 @@ public class GameManager : MonoBehaviour
 	#region FSM Menu
 	void InMenu() 
 	{
-		Debug.Log("InMenu");
+		Debug.Log("InMenu - left click to start");
 		gameState = eGameState.Menu;
 	}
 	void ModifyMenu() 
 	{
-		InPlay();
-		return;
+		if (Input.GetMouseButtonDown(0)) 
+		{
+			InPlay();
+			return;
+		}
 	}
 	#endregion
 
@@ -36,12 +40,25 @@ public class GameManager : MonoBehaviour
 	void InPlay() 
 	{
 		Debug.Log("InPlay");
+		RoomManager.instance.Init();
+
 		gameState = eGameState.Play;
 	}
 	void ModifyPlay() 
 	{
-		InGameOver();
-		return;
+		Debug.Log("Playing");
+		if (PlayerController.instance != null)
+		{
+			if (PlayerController.instance.playerType == ePlayerType.Alive) 
+			{
+				PlayerController.instance.Move();
+			}
+			else if (PlayerController.instance.playerType == ePlayerType.Dead) 
+			{
+				InGameOver();
+				return;
+			}
+		}
 	}
 	#endregion
 

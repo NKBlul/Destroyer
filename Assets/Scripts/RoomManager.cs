@@ -5,17 +5,37 @@ using Photon.Pun;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
-    public GameObject player;
+	#region singletone
+	public static RoomManager instance;
+    private void Awake() 
+    {
+        if (instance != null) 
+        {
+            Destroy(gameObject);
+            return;
+        } 
+        else 
+        {
+            instance = this;
+        }
+    }
+	#endregion
+	public GameObject player;
 
     [Space]
     public Transform spawnPoint;
 
-    void Start()
+    public void Init() 
     {
-        Debug.Log("Connecting...");
-
-        PhotonNetwork.ConnectUsingSettings();
+        Connecting();
     }
+
+    public void Connecting() 
+    {
+		Debug.Log("Connecting...");
+
+		PhotonNetwork.ConnectUsingSettings();
+	}
 
     public override void OnConnectedToMaster()
     {

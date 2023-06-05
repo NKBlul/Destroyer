@@ -469,6 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78e54ed36df56844a9cb95c30906323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerType: 0
   _playerCamera: {fileID: 5985336974331703686}
   _mouseSmoothTime: 0.02
   _cursorLock: 1
