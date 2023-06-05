@@ -57,6 +57,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+		Init();
+    }
+
+    public void Update() 
+	{ 
+		Move();
+
+	}
+
 	public void Move() 
     {
 		// Mouse

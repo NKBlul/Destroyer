@@ -10,12 +10,13 @@ public class MoveShip : MonoBehaviour
     {
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-            transform.Translate(direction * 5 * Time.deltaTime);
-            print(transform.position);
+        //commented out for now because its causing the player to moved cuz its dragged by the flooring 
+            //transform.Translate(direction * 5 * Time.deltaTime);
+            //print(transform.position);
         
     }
 }

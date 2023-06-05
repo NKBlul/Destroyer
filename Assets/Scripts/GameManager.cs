@@ -43,30 +43,32 @@ public class GameManager : MonoBehaviour
 	{
 		Debug.Log("InPlay");
 
-		PlayerController.instance.Init();
+		//need to figure out
+		//PlayerController.instance.Init();
 
 		gameState = eGameState.Play;
 	}
 	void ModifyPlay() 
 	{
 		Debug.Log("Playing");
-		if (PlayerController.instance != null)
-		{
-			if (PlayerController.instance.playerType == ePlayerType.Alive) 
-			{
-				PlayerController.instance.Move();
-			}
-			else if (PlayerController.instance.playerType == ePlayerType.Dead) 
-			{
-				InGameOver();
-				return;
-			}
-		}
-	}
-	#endregion
+		//need to figure out
+        //if (PlayerController.instance != null)
+        //{
+        //	if (PlayerController.instance.playerType == ePlayerType.Alive) 
+        //	{
+        //		PlayerController.instance.Move();
+        //	}
+        //	else if (PlayerController.instance.playerType == ePlayerType.Dead) 
+        //	{
+        //		InGameOver();
+        //		return;
+        //	}
+        //}
+    }
+    #endregion
 
-	#region FSM GameOver
-	void InGameOver() 
+    #region FSM GameOver
+    void InGameOver() 
 	{
 		Debug.Log("InGameOver");
 		gameState = eGameState.GameOver;

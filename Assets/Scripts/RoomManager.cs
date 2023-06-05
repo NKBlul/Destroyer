@@ -73,4 +73,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         roomType = eRoomType.Joined;
 	}
+
+    public override void OnLeftRoom()
+    {
+        base.OnLeftRoom();
+    }
 }
