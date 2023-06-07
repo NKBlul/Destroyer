@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 	}
 	void ModifyInit() 
 	{
-		if (PlayerManager.instance.players.Count > 0)
+		if (PlayerManager.instance.PlayerExist())
 		{
 			InPlay();
 			return;
