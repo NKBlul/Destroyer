@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     Vector2 _currentDir;
     Vector2 _currentDirVelocity;
 
+    public GameObject camera;
+
     public void Init()
     {
 		_controller = GetComponent<CharacterController>();
@@ -36,6 +38,8 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
         }
+
+        camera.SetActive(true);
     }
 
 	public void Move() 
