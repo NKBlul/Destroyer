@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 	{
 		Debug.Log("Playing");
 
-		if (PlayerManager.instance.players.Count <= 0)
+		if (!PlayerManager.instance.PlayerExist())
 		{
 			InGameOver();
 			return;

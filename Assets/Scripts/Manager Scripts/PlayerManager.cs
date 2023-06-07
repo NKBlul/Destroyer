@@ -47,4 +47,9 @@ public class PlayerManager : MonoBehaviour
 			players[i].Move();
 		}
 	}
+
+	public bool PlayerExist()
+	{
+		return players.Count > 0;
+	}
 }
