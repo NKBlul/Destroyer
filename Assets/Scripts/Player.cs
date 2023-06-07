@@ -3,25 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ePlayerType 
+public class Player : MonoBehaviour
 {
-    None,
-    Alive,
-    Dead
-}
-
-public class PlayerController : MonoBehaviour
-{
-	#region singletone
-	public static PlayerController instance;
-	public void Awake() 
-	{
-		instance = this;
-	}
-	#endregion
-	public ePlayerType playerType = ePlayerType.None;
-
-
 	[SerializeField] Transform _playerCamera;
     [SerializeField][Range(0.0f, 0.5f)] float _mouseSmoothTime = 0.03f;
     [SerializeField] bool _cursorLock = true;
@@ -46,8 +29,6 @@ public class PlayerController : MonoBehaviour
 
     public void Init()
     {
-		playerType = ePlayerType.Alive;
-
 		_controller = GetComponent<CharacterController>();
 
         if (_cursorLock)
@@ -56,17 +37,6 @@ public class PlayerController : MonoBehaviour
             Cursor.visible = true;
         }
     }
-
-    public void Start()
-    {
-		Init();
-    }
-
-    public void Update() 
-	{ 
-		Move();
-
-	}
 
 	public void Move() 
     {

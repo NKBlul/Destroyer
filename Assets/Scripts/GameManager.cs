@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 	}
 	void ModifyInit() 
 	{
-		if (RoomManager.instance.roomType  == eRoomType.Joined)
+		if (PlayerManager.instance.players.Count > 0)
 		{
 			InPlay();
 			return;
@@ -43,28 +43,19 @@ public class GameManager : MonoBehaviour
 	{
 		Debug.Log("InPlay");
 
-		//need to figure out
-		//PlayerController.instance.Init();
-
 		gameState = eGameState.Play;
 	}
 	void ModifyPlay() 
 	{
 		Debug.Log("Playing");
-		//need to figure out
-        //if (PlayerController.instance != null)
-        //{
-        //	if (PlayerController.instance.playerType == ePlayerType.Alive) 
-        //	{
-        //		PlayerController.instance.Move();
-        //	}
-        //	else if (PlayerController.instance.playerType == ePlayerType.Dead) 
-        //	{
-        //		InGameOver();
-        //		return;
-        //	}
-        //}
-    }
+
+		if (PlayerManager.instance.players.Count <= 0)
+		{
+			InGameOver();
+			return;
+		}
+		PlayerManager.instance.MovePlayers();
+	}
     #endregion
 
     #region FSM GameOver
