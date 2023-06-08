@@ -5,7 +5,8 @@ using UnityEngine;
 public class MoveShip : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Vector3 direction = Vector3.right;
+    public Vector3 direction = Vector3.forward;
+    [SerializeField] float shipSpeed = 5;
     void Start()
     {
         
@@ -15,7 +16,7 @@ public class MoveShip : MonoBehaviour
     void Update()
     {
         //commented out for now because its causing the player to moved cuz its dragged by the flooring 
-            //transform.Translate(direction * 5 * Time.deltaTime);
+            transform.Translate(direction * shipSpeed * Time.deltaTime);
             //print(transform.position);
         
     }
