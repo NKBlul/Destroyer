@@ -7,6 +7,16 @@ public class MoveShip : MonoBehaviour
     // Start is called before the first frame update
     public Vector3 direction = Vector3.forward;
     [SerializeField] float shipSpeed = 5;
+    [SerializeField] float turnSpeed = 60f;
+
+    Transform myT;
+
+    void Awake()
+    {
+        myT = transform;
+    }
+
+
     void Start()
     {
 
@@ -18,7 +28,14 @@ public class MoveShip : MonoBehaviour
         //commented out for now because its causing the player to moved cuz its dragged by the flooring 
         transform.Translate(direction * shipSpeed * Time.deltaTime);
         //print(transform.position);
+        Turn();
+    }
 
+    //makes the ship turn using the J and L keys
+    void Turn()
+    {
+        float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Horizontali");
+        myT.Rotate(0, yaw, 0);
     }
 
     private void OnTriggerEnter(Collider other)
