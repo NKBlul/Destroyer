@@ -5,7 +5,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	[SerializeField] Transform _playerCamera;
+    #region singletone
+    public static Player instance;
+    public void Awake()
+    {
+        instance = this;
+    }
+    #endregion
+
+    [SerializeField] Transform _playerCamera;
     [SerializeField][Range(0.0f, 0.5f)] float _mouseSmoothTime = 0.03f;
     [SerializeField] bool _cursorLock = true;
     [SerializeField] float _mouseSensitivity = 3.5f;

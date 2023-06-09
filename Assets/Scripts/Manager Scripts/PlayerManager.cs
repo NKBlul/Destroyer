@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
 	// Called when a player connects to the server
 	public void AddPlayer(GameObject playerObj)
 	{
-		Player player  = playerObj.GetComponent<Player>();
+		Player player = playerObj.GetComponent<Player>();
 
 		// player object enabled
 		playerObj.SetActive(true);

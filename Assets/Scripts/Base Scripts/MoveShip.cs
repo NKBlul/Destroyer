@@ -34,7 +34,7 @@ public class MoveShip : MonoBehaviour
     //makes the ship turn using the J and L keys
     void Turn()
     {
-        float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Horizontali");
+        float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
         myT.Rotate(0, yaw, 0);
     }
 
