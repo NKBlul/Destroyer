@@ -9,15 +9,25 @@ public class MoveShip : MonoBehaviour
     [SerializeField] float shipSpeed = 5;
     void Start()
     {
-        
+
     }
-    
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //commented out for now because its causing the player to moved cuz its dragged by the flooring 
-            transform.Translate(direction * shipSpeed * Time.deltaTime);
-            //print(transform.position);
-        
+        transform.Translate(direction * shipSpeed * Time.deltaTime);
+        //print(transform.position);
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        other.transform.SetParent(transform);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        other.transform.SetParent(null);
     }
 }
