@@ -12,9 +12,13 @@ public class EnemyControllerAI : BaseEnemy
     public LayerMask whatIsGround, whatIsPlayer;
 
     //patroling
+    public float walkSpeed;
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
+
+    //chasing
+    float runSpeed = 7;
 
     //Attacking
     public float timeBetweenAttacks;
@@ -26,7 +30,7 @@ public class EnemyControllerAI : BaseEnemy
 
     private void Awake()
     {
-        
+        walkSpeed = m_Speed;
         agent = GetComponent<NavMeshAgent>();
     }
     // Start is called before the first frame update
@@ -38,16 +42,6 @@ public class EnemyControllerAI : BaseEnemy
     // Update is called once per frame
     void Update()
     {
-        //if (!player)
-        //{
-        //    Debug.Log("Player not found");
-        //}
-        //else if (player)
-        //{
-        //    Debug.Log("Player found");
-        //    //player = GameObject.Find("Player").transform;
-        //    player.position = Player.instance.transform.position;
-        //}
         if (PlayerManager.instance.PlayerExist())
         {
             player.GetComponent<Transform>().position = Player.instance.transform.position;
@@ -121,6 +115,7 @@ public class EnemyControllerAI : BaseEnemy
 
     private void ChasePlayer()
     {
+        agent.speed = runSpeed;
         agent.SetDestination(player.position);
     }
 

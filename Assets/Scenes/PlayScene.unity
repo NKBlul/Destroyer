@@ -1606,6 +1606,14 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4094205507579771918, guid: 88c739025c119ae40bb5dedd60521625, type: 3}
+      propertyPath: Synchronization
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094205507579771919, guid: 88c739025c119ae40bb5dedd60521625, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88c739025c119ae40bb5dedd60521625, type: 3}
 --- !u!1 &1782110850
