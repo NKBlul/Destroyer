@@ -23,18 +23,17 @@ public class MoveShip : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //commented out for now because its causing the player to moved cuz its dragged by the flooring 
         transform.Translate(direction * shipSpeed * Time.deltaTime);
-        //print(transform.position);
         Turn();
     }
 
     //makes the ship turn using the J and L keys
     void Turn()
     {
-        float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
+        float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Turning");
         myT.Rotate(0, yaw, 0);
     }
 
