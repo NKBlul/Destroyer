@@ -28,6 +28,9 @@ public class EnemyControllerAI : BaseEnemy
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    //temporary code
+    bool activateShip = false;
+
     private void Awake()
     {
         walkSpeed = m_Speed;
@@ -60,6 +63,7 @@ public class EnemyControllerAI : BaseEnemy
         {
             //enemy patrols
             Debug.Log("Patrol State");
+            UI.instance.enemyState.text = "Enemy State: Patrol";
             Patroling();
         }
         //if in sight but not in attack range
@@ -67,6 +71,7 @@ public class EnemyControllerAI : BaseEnemy
         {
             //enemy chase player
             Debug.Log("Chase Player State");
+            UI.instance.enemyState.text = "Enemy State: Chase";
             ChasePlayer();
         }
         //if both in sight and attack range
@@ -74,7 +79,23 @@ public class EnemyControllerAI : BaseEnemy
         {
             //attack player
             Debug.Log("Attack Player State");
+            UI.instance.enemyState.text = "Enemy State: Attack";
             AttackPlayer();
+        }
+
+        //temporary code
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (activateShip == false)
+            {
+                activateShip = true;
+                GameObject.Find("Map").GetComponent<MoveShip>().enabled = true;
+            }
+            else if (activateShip == true)
+            {
+                activateShip = false;
+                GameObject.Find("Map").GetComponent<MoveShip>().enabled = false;
+            }
         }
     }
 
