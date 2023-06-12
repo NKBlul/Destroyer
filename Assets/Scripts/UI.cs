@@ -27,11 +27,6 @@ public class UI : MonoBehaviour
     {
         enemyState.transform.localPosition = new Vector3(-468, -177, 0);
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            SceneManager.LoadScene("MenuScene");
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
