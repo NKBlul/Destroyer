@@ -89,6 +89,15 @@ public class Player : MonoBehaviour
 		if (_isGrounded! && _controller.velocity.y < -1.0f) {
 			_velocityY = -8.0f;
 		}
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            _speed = 10.0f;
+        }
+        else
+        {
+            _speed = 6.0f;
+        }
 		// Move
 	}
 }
