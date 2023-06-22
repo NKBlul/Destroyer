@@ -25,7 +25,7 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyState.transform.localPosition = new Vector3(-468, -177, 0);
+        enemyState.transform.localPosition = new Vector3(-368, -150, 0);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
