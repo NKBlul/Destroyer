@@ -28,6 +28,6 @@ public class BaseCharacter : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
-        Debug.Log("Character ded");
+        Debug.Log(gameObject.ToString() + " ded");
     }
 }

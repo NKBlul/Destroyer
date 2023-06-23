@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ShootBullet : MonoBehaviour
 {
-    public GameObject myBullet;
-    public float speed = 100; 
-
+    [SerializeField] private Transform bulletSpawn;
+    [SerializeField] private GameObject bulletPrefab;
+    private float bulletSpeed = 20.0f;
 
     private void Start()
     {
@@ -17,11 +17,9 @@ public class ShootBullet : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            GameObject myBulletPrefab = Instantiate(myBullet, 
-                transform.position, Quaternion.identity) as GameObject; 
-
-            Rigidbody myBulletPrefabRigidbody = myBulletPrefab.GetComponent<Rigidbody>();
-            myBulletPrefabRigidbody.AddForce(Vector3.forward * speed);
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+            bullet.GetComponent<Rigidbody>().velocity = bulletSpawn.forward * bulletSpeed;
+            Destroy(bullet, 1.0f);
         }
     }
 }

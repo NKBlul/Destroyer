@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyControllerAI : BaseEnemy
 {
+    public static EnemyControllerAI instance;
+
     public NavMeshAgent agent;
 
     public Transform player;
@@ -35,6 +37,7 @@ public class EnemyControllerAI : BaseEnemy
     {
         walkSpeed = m_Speed;
         agent = GetComponent<NavMeshAgent>();
+        instance = this;
     }
     // Start is called before the first frame update
     void Start()
@@ -51,7 +54,7 @@ public class EnemyControllerAI : BaseEnemy
         }
         else
         {
-            return;
+            Patroling();
         }
 
         //check if player in sight or attack range
