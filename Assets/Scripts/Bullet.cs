@@ -32,5 +32,6 @@ public class Bullet : MonoBehaviour
         }
 
         Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
     }
 }

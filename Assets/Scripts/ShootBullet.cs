@@ -24,7 +24,7 @@ public class ShootBullet : MonoBehaviour
 
     private void Shooting()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position,
+        GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawn.position,
             bulletSpawn.transform.rotation);
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
