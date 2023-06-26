@@ -48,6 +48,7 @@ public class EnemyControllerAI : BaseEnemy
     // Update is called once per frame
     void Update()
     {
+        //need to fix
         if (PlayerManager.instance.PlayerExist())
         {
             player.GetComponent<Transform>().position = Player.instance.transform.position;
@@ -56,6 +57,7 @@ public class EnemyControllerAI : BaseEnemy
         {
             Patroling();
         }
+        //need to fix
 
         //check if player in sight or attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);

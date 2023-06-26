@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,10 +24,10 @@ public class ShootBullet : MonoBehaviour
 
     private void Shooting()
     {
-        GameObject cb = Instantiate(bulletPrefab, bulletSpawn.position,
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position,
             bulletSpawn.transform.rotation);
 
-        Rigidbody rig = cb.GetComponent<Rigidbody>();
-        rig.AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
     }
 }

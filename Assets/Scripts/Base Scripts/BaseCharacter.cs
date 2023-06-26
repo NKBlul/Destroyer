@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,7 @@ public class BaseCharacter : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
         Debug.Log(gameObject.ToString() + " ded");
     }
 }

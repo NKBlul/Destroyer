@@ -11,7 +11,7 @@ public class BaseEnemy : BaseCharacter
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         pv = GetComponent<PhotonView>();
     }
 
