@@ -49,14 +49,14 @@ public class EnemyControllerAI : BaseEnemy
     void Update()
     {
         //need to fix
-        //if (PlayerManager.instance.PlayerExist())
-        //{
-        //    player.GetComponent<Transform>().position = Player.instance.transform.position;
-        //}
-        //else
-        //{
-        //    Patroling();
-        //}
+        if (player)
+        {
+            Patroling();
+        }
+        else
+        {
+            return;
+        }
         //need to fix
 
         //check if player in sight or attack range

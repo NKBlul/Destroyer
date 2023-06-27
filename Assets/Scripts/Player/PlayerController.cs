@@ -8,7 +8,9 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 {
-	[SerializeField] Image healthbarImage;
+    public static PlayerController Instance;
+
+    [SerializeField] Image healthbarImage;
 	[SerializeField] GameObject ui;
 
 	[SerializeField] GameObject cameraHolder;
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 	void Awake()
 	{
+		Instance = this;
+
 		rb = GetComponent<Rigidbody>();
 		PV = GetComponent<PhotonView>();
 

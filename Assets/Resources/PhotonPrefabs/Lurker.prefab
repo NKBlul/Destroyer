@@ -142,13 +142,13 @@ MonoBehaviour:
   m_DamageDealt: 20
   m_Speed: 5
   agent: {fileID: 4094205507579771905}
-  player: {fileID: 5985336973513828060, guid: b313e19929718fb42b75e8b5e5c36ac3, type: 3}
+  player: {fileID: 1488053958305132835, guid: 344b29e78c596ad47b6e205062ce74a6, type: 3}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   walkSpeed: 0
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 3
