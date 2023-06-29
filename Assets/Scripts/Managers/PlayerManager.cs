@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
 	int kills;
 	int deaths;
 
+	public Camera mainTurretPOV;
 	void Awake()
 	{
 		PV = GetComponent<PhotonView>();
@@ -65,5 +66,27 @@ public class PlayerManager : MonoBehaviour
 	public static PlayerManager Find(Player player)
 	{
 		return FindObjectsOfType<PlayerManager>().SingleOrDefault(x => x.PV.Owner == player);
+	}
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T)) 
+		{
+			SetTurretCam();
+		}
+    }
+
+	public void SetTurretCam()
+	{
+		if (mainTurretPOV.enabled == true)
+		{
+			Camera.main.enabled = true;
+			mainTurretPOV.enabled = false;
+		}
+		else
+		{
+			Camera.main.enabled = false;
+			mainTurretPOV.enabled = true;
+		}
 	}
 }
