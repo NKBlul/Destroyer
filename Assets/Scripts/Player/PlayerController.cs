@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 	[SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime;
 
 	[SerializeField] Item[] items;
+	public Rigidbody rigidbody;
 
 	int itemIndex;
 	int previousItemIndex = -1;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 	const float maxHealth = 100f;
 	float currentHealth = maxHealth;
+	bool isOnPlatform = false;
 
 	PlayerManager playerManager;
 
@@ -129,7 +131,14 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 		Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
 
 		moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
-	}
+        rigidbody.MovePosition(transform.position + moveAmount * Time.deltaTime);
+
+        if (isOnPlatform)
+        {
+            // Adjust the player's position based on the platform's movement
+            transform.position += moveAmount * Time.deltaTime;
+        }
+    }
 
 	void Jump()
 	{

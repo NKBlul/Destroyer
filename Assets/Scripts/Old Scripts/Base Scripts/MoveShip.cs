@@ -10,6 +10,7 @@ public class MoveShip : MonoBehaviour
     [SerializeField] float turnSpeed = 60f;
 
     Transform myT;
+    private bool isOnPlatform = false;
 
     void Awake()
     {
@@ -39,11 +40,21 @@ public class MoveShip : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.SetParent(transform);
+        Debug.Log("trigger is working");
+        if (other.CompareTag("Player"))
+        {
+            //isOnPlatform = true;
+            other.transform.parent = transform;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        other.transform.SetParent(null);
+        if (other.CompareTag("Player"))
+        {
+            //isOnPlatform = false;
+            other.transform.parent = null;
+        }
+        
     }
 }
