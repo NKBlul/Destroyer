@@ -32,4 +32,9 @@ public class BaseCharacter : MonoBehaviour
         PhotonNetwork.Destroy(gameObject);
         Debug.Log(gameObject.ToString() + " ded");
     }
+
+    private void Update()
+    {
+  
+    }
 }
