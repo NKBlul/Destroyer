@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 	float verticalLookRotation;
 	bool grounded;
-	Vector3 smoothMoveVelocity;
+    Vector3 smoothMoveVelocity;
 	Vector3 moveAmount;
 
 	Rigidbody rb;
@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 	const float maxHealth = 100f;
 	float currentHealth = maxHealth;
-	bool isOnPlatform = false;
 
 	PlayerManager playerManager;
+
 
 	void Awake()
 	{
@@ -132,12 +132,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 		moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
         rigidbody.MovePosition(transform.position + moveAmount * Time.deltaTime);
-
-        if (isOnPlatform)
-        {
-            // Adjust the player's position based on the platform's movement
-            transform.position += moveAmount * Time.deltaTime;
-        }
     }
 
 	void Jump()
@@ -180,12 +174,12 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 		}
 	}
 
-	public void SetGroundedState(bool _grounded)
-	{
-		grounded = _grounded;
-	}
+    public void SetGroundedState(bool _grounded)
+    {
+        grounded = _grounded;
+    }
 
-	void FixedUpdate()
+    void FixedUpdate()
 	{
 		if(!PV.IsMine)
 			return;

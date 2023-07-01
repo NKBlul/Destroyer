@@ -17,7 +17,6 @@ public class MoveShip : MonoBehaviour
         myT = transform;
     }
 
-
     void Start()
     {
 
@@ -36,25 +35,5 @@ public class MoveShip : MonoBehaviour
     {
         float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Turning");
         myT.Rotate(0, yaw, 0);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("trigger is working");
-        if (other.CompareTag("Player"))
-        {
-            //isOnPlatform = true;
-            other.transform.parent = transform;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            //isOnPlatform = false;
-            other.transform.parent = null;
-        }
-        
     }
 }
