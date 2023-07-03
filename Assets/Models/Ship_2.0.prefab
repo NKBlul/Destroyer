@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &196121945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 196121946}
+  - component: {fileID: 196121947}
+  - component: {fileID: 196121948}
+  m_Layer: 6
+  m_Name: PlayerOnTheShip
+  m_TagString: OnShip
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &196121946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196121945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 855752436339743050}
+  m_RootOrder: 92
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &196121947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196121945}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 37, y: 30, z: 192.5}
+  m_Center: {x: 0, y: 11, z: 29.1}
+--- !u!114 &196121948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196121945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273cd410b233a3d4dab6862f27d2a48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &632854593
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +243,65 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 37, y: 1, z: 77}
   m_Center: {x: 1.28, y: 4.2, z: -30.74}
+--- !u!1 &1727354035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1727354036}
+  - component: {fileID: 1727354038}
+  - component: {fileID: 1727354037}
+  m_Layer: 6
+  m_Name: ShipPlatform
+  m_TagString: Platform
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1727354036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727354035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 855752436339743050}
+  m_RootOrder: 93
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1727354038
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727354035}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 37, y: 1, z: 77.4}
+  m_Center: {x: 1.6, y: 9.58, z: -28}
+--- !u!65 &1727354037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727354035}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 34, y: 1, z: 115.66}
+  m_Center: {x: 1.1, y: 6.13, z: 67.12}
 --- !u!1 &1785044432
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +513,7 @@ GameObject:
   - component: {fileID: 4541694766863375849}
   m_Layer: 6
   m_Name: Ship_2.0
-  m_TagString: Platform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,6 +622,8 @@ Transform:
   - {fileID: 1354471557}
   - {fileID: 632854594}
   - {fileID: 1785044433}
+  - {fileID: 196121946}
+  - {fileID: 1727354036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2296,7 +2415,7 @@ GameObject:
   - component: {fileID: 4340682977816582495}
   m_Layer: 6
   m_Name: cabins.001
-  m_TagString: Platform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4362,6 +4481,7 @@ GameObject:
   - component: {fileID: 6491184424144479026}
   - component: {fileID: 4916762150134742268}
   - component: {fileID: 792156510}
+  - component: {fileID: 315366314}
   m_Layer: 6
   m_Name: Turrett
   m_TagString: Untagged
@@ -4449,6 +4569,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5655111614951860869, guid: 0ac93821b1fbdc544ad74826f23e8459, type: 3}
+--- !u!114 &315366314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3114486052440247695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f36666369a8394d993bb07b784c385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretAmmoSpawn: {fileID: 0}
+  turretAmmoPrefab: {fileID: 0}
+  isActive: 0
 --- !u!1 &3344597234517805108
 GameObject:
   m_ObjectHideFlags: 0
