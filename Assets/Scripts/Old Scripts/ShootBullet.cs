@@ -9,27 +9,27 @@ public class ShootBullet : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     private float bulletSpeed = 5f;
 
-    //PhotonView pv;
+    PhotonView pv;
 
     void Awake()
     {
-       //pv = GetComponent<PhotonView>();
+       pv = GetComponent<PhotonView>();
     }
 
     private void Start()
     {
-        //if (!pv.IsMine)
-        //{
-        //    Destroy(pv);
-        //}
+        if (!pv.IsMine)
+        {
+            Destroy(pv);
+        }
     }
     // Update is called once per frame
     void Update()
     {
-        //if (!pv.IsMine)
-        //{
-        //    return;
-        //}
+        if (!pv.IsMine)
+        {
+            return;
+        }
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {

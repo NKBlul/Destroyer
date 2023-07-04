@@ -39,14 +39,6 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
         }
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (!pv.IsMine)
-    //    {
-    //        return;
-    //    }
-    //}
-
     public void Attack()
     {
         Debug.Log("Damage: " + m_DamageDealt);
@@ -63,8 +55,8 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
 
     public void Die()
     {   
-        Destroy(gameObject);
-        //PhotonNetwork.Destroy(gameObject);
-        Debug.Log(gameObject + " ded");
+        //Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
+        Debug.Log(gameObject.name + " ded");
     }
 }

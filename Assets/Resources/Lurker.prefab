@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Health: 30
   m_DamageDealt: 20
   m_Speed: 5
+  rb: {fileID: 0}
+  pv: {fileID: 0}
   agent: {fileID: 4094205507579771905}
   player: {fileID: 1488053958305132835, guid: 344b29e78c596ad47b6e205062ce74a6, type: 3}
   whatIsGround:
