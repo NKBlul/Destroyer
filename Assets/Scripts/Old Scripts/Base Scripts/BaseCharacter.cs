@@ -56,15 +56,16 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
     public void Die()
     {
         Destroy(gameObject);
-        if (pv != null && (pv.IsMine || PhotonNetwork.IsMasterClient))
-        {
-            // Transfer ownership to master client if not already owned by it
-            if (!pv.IsMine)
-            {
-                pv.TransferOwnership(PhotonNetwork.MasterClient);
-                PhotonNetwork.Destroy(gameObject);
-            }
-        }
+        PhotonNetwork.Destroy(gameObject);
+        //if (pv != null && (pv.IsMine || PhotonNetwork.IsMasterClient))
+        //{
+        //    // Transfer ownership to master client if not already owned by it
+        //    if (!pv.IsMine)
+        //    {
+        //        pv.TransferOwnership(PhotonNetwork.MasterClient);
+        //        PhotonNetwork.Destroy(gameObject);
+        //    }
+        //}
         Debug.Log(gameObject.name + " ded");
     }
 }
