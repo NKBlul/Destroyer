@@ -489,11 +489,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1868358216634133100, guid: c7cd9d45e1561a64893116a9e75f141c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7cd9d45e1561a64893116a9e75f141c, type: 3}
 --- !u!20 &315366313 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3370086088440944353, guid: c7cd9d45e1561a64893116a9e75f141c,
+    type: 3}
+  m_PrefabInstance: {fileID: 315366312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &315366314 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8833929157727065308, guid: c7cd9d45e1561a64893116a9e75f141c,
     type: 3}
   m_PrefabInstance: {fileID: 315366312}
   m_PrefabAsset: {fileID: 0}
@@ -2225,6 +2236,7 @@ MonoBehaviour:
   cameras:
   - {fileID: 1877591521}
   - {fileID: 315366313}
+  - {fileID: 315366314}
 --- !u!1001 &1877510484
 PrefabInstance:
   m_ObjectHideFlags: 0

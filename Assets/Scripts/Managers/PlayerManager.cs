@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
 	int kills;
 	int deaths;
 
-	public Camera mainTurretPOV;
+	//public Camera mainTurretPOV;
 	void Awake()
 	{
 		PV = GetComponent<PhotonView>();
@@ -70,10 +70,10 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)) 
-		{
-			SetTurretCam();
-		}
+  //      if (Input.GetKeyDown(KeyCode.T)) 
+		//{
+		//	//SetTurretCam();
+		//}
     }
 
 	public void SetTurretCam()
