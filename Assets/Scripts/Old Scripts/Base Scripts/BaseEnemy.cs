@@ -6,28 +6,28 @@ using UnityEngine;
 
 public class BaseEnemy : BaseCharacter
 {
-    Rigidbody rb;
-    PhotonView pv;
+    //public Rigidbody rb;
+    //public PhotonView pv;
 
     private void Awake()
     {
         //rb = GetComponent<Rigidbody>();
-        pv = GetComponent<PhotonView>();
+        //pv = GetComponent<PhotonView>();
     }
 
     private void Start()
     {
-        if (!pv.IsMine)
-        {
-            Destroy(rb);
-        }
+        //if (!pv.IsMine)
+        //{
+        //    Destroy(rb);
+        //}
     }
 
     private void Update()
     {
-        if (!pv.IsMine)
-        {
-            return;
-        }
+        //if (!pv.IsMine)
+        //{
+        //    return;
+        //}
     }
 }

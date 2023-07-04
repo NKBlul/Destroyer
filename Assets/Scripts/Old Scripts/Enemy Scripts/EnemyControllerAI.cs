@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,8 +42,8 @@ public class EnemyControllerAI : BaseEnemy
     }
     // Start is called before the first frame update
     void Start()
-    {       
-        
+    {
+
     }
 
     // Update is called once per frame
@@ -91,16 +92,17 @@ public class EnemyControllerAI : BaseEnemy
         //temporary code
         if (Input.GetKeyDown(KeyCode.G))
         {
-            if (activateShip == false)
-            {
-                activateShip = true;
-                GameObject.Find("Map").GetComponent<MoveShip>().enabled = true;
-            }
-            else if (activateShip == true)
-            {
-                activateShip = false;
-                GameObject.Find("Map").GetComponent<MoveShip>().enabled = false;
-            }
+            //if (activateShip == false)
+            //{
+            //    activateShip = true;
+            //    GameObject.Find("Map").GetComponent<MoveShip>().enabled = true;
+            //}
+            //else if (activateShip == true)
+            //{
+            //    activateShip = false;
+            //    GameObject.Find("Map").GetComponent<MoveShip>().enabled = false;
+            //}
+            Die();
         }
     }
 

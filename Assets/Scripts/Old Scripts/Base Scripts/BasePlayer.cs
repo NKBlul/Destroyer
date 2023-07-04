@@ -10,24 +10,17 @@ public class BasePlayer : BaseCharacter
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        pv = GetComponent<PhotonView>();
+
     }
 
     private void Start()
     {
-        if (!pv.IsMine)
-        {
-            Destroy(rb);
-        }
+
     }
 
     private void Update()
     { 
-        if (!pv.IsMine)
-        {
-            return;
-        }
+
     }
 
    

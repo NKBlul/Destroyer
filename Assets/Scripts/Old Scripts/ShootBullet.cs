@@ -7,7 +7,14 @@ public class ShootBullet : MonoBehaviour
 {
     [SerializeField] public Transform bulletSpawn;
     [SerializeField] private GameObject bulletPrefab;
-    private float bulletSpeed = 3f;
+    private float bulletSpeed = 20f;
+
+    PhotonView PV;
+
+    void Awake()
+    {
+        PV = GetComponent<PhotonView>();
+    }
 
     private void Start()
     {
