@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!pv.IsMine)
+        if (!pv.IsMine && pv != null)
         {
             Destroy(rb);
         }
@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pv.IsMine)
+        if (!pv.IsMine && pv != null)
         {
             return;
         }
@@ -55,7 +55,7 @@ public class Bullet : MonoBehaviour
             // Transfer ownership to master client if not already owned by it
             if (!pv.IsMine)
             {
-               // pv.TransferOwnership(PhotonNetwork.MasterClient);
+                pv.TransferOwnership(PhotonNetwork.MasterClient);
                 PhotonNetwork.Destroy(gameObject);
             }
         }

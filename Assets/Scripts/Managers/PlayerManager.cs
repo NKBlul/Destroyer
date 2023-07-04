@@ -78,15 +78,15 @@ public class PlayerManager : MonoBehaviour
 
 	public void SetTurretCam()
 	{
-		if (mainTurretPOV.enabled == true)
-		{
-			Camera.main.enabled = true;
-			mainTurretPOV.enabled = false;
-		}
-		else
-		{
-			Camera.main.enabled = false;
-			mainTurretPOV.enabled = true;
-		}
+		//if (mainTurretPOV.enabled == true)
+		//{
+		//	Camera.main.enabled = true;
+		//	mainTurretPOV.enabled = false;
+		//}
+		//else
+		//{
+		//	Camera.main.enabled = false;
+		//	mainTurretPOV.enabled = true;
+		//}
 	}
 }

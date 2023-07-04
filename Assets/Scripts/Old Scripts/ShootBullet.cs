@@ -18,7 +18,7 @@ public class ShootBullet : MonoBehaviour
 
     private void Start()
     {
-        if (!pv.IsMine)
+        if (!pv.IsMine && pv != null)
         {
             Destroy(pv);
         }
