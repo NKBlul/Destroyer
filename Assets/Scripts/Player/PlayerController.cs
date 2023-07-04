@@ -19,11 +19,11 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 	[SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime;
 
-	[SerializeField] Item[] items;
+	//[SerializeField] Item[] items;
 	public Rigidbody rigidbody;
 
-	int itemIndex;
-	int previousItemIndex = -1;
+	//int itemIndex;
+	//int previousItemIndex = -1;
 
 	float verticalLookRotation;
 	bool grounded;

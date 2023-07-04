@@ -7,22 +7,30 @@ public class ShootBullet : MonoBehaviour
 {
     [SerializeField] public Transform bulletSpawn;
     [SerializeField] private GameObject bulletPrefab;
-    private float bulletSpeed = 20f;
+    private float bulletSpeed = 5f;
 
-    PhotonView PV;
+    //PhotonView pv;
 
     void Awake()
     {
-        PV = GetComponent<PhotonView>();
+       //pv = GetComponent<PhotonView>();
     }
 
     private void Start()
     {
-        
+        //if (!pv.IsMine)
+        //{
+        //    Destroy(pv);
+        //}
     }
     // Update is called once per frame
     void Update()
     {
+        //if (!pv.IsMine)
+        //{
+        //    return;
+        //}
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Shooting();

@@ -10,9 +10,9 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
     [SerializeField] public float m_Speed = 5.0f;
     //[SerializeField] string m_CharacterRole = "Null";
 
-    Rigidbody rb;
+    public Rigidbody rb;
 
-    PhotonView pv;
+    public PhotonView pv;
 
     protected Rigidbody m_Rigidbody;
 
@@ -38,6 +38,14 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
             return;
         }
     }
+
+    //private void FixedUpdate()
+    //{
+    //    if (!pv.IsMine)
+    //    {
+    //        return;
+    //    }
+    //}
 
     public void Attack()
     {

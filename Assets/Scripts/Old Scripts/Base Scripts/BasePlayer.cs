@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class BasePlayer : BaseCharacter
 {
-    Rigidbody rb;
-    PhotonView pv;
 
     private void Awake()
     {

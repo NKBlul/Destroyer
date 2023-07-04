@@ -7,34 +7,35 @@ public class Bullet : MonoBehaviour
 {
     public float life = 3;
 
-    Rigidbody rb;
+    //Rigidbody rb;
 
-    PhotonView pv;
+    //PhotonView pv;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        pv = GetComponent<PhotonView>();
+        //rb = GetComponent<Rigidbody>();
+        //pv = GetComponent<PhotonView>();
+        Invoke("DestroyBullet", life);
         Destroy(gameObject, life);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        if (!pv.IsMine)
-        {
-            Destroy(rb);
-            Destroy(pv);
-        }
+        //if (!pv.IsMine)
+        //{
+        //    Destroy(rb);
+        //    Destroy(pv);
+        //}
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!pv.IsMine)
-        {
-            return;
-        }
+        //if (!pv.IsMine)
+        //{
+        //    return;
+        //}
     }
 
     private void OnCollisionEnter(Collision other)
@@ -45,6 +46,11 @@ public class Bullet : MonoBehaviour
         }
 
         Destroy(gameObject);
+        DestroyBullet();
+    }
+
+    private void DestroyBullet()
+    {
         PhotonNetwork.Destroy(gameObject);
     }
 }
