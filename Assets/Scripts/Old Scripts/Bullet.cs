@@ -8,14 +8,14 @@ public class Bullet : MonoBehaviour
     public float life = 3;
 
     Rigidbody rb;
-
+    
     PhotonView pv;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         pv = GetComponent<PhotonView>();
-        Invoke("DestroyBullet", life);
+        Invoke(nameof(DestroyBullet), life);
         Destroy(gameObject, life);
     }
 
@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
     {
         if (!pv.IsMine && pv != null)
         {
+            //Destroy(pv);
             Destroy(rb);
         }
     }
@@ -45,10 +46,11 @@ public class Bullet : MonoBehaviour
         }
 
         Destroy(gameObject);
-        PhotonNetwork.Destroy(gameObject);
-        //DestroyBullet();
+        //PhotonNetwork.Destroy(gameObject);
+        DestroyBullet();
     }
 
+    [PunRPC]
     private void DestroyBullet()
     {
         if (pv != null && (pv.IsMine || PhotonNetwork.IsMasterClient))
@@ -60,6 +62,6 @@ public class Bullet : MonoBehaviour
                 PhotonNetwork.Destroy(gameObject);
             }
         }
-       
+        //PhotonNetwork.Destroy(gameObject);
     }
 }

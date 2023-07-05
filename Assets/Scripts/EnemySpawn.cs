@@ -10,10 +10,20 @@ public class EnemySpawn : MonoBehaviourPunCallbacks
 
     private GameObject spawnEnemy;
 
+    PhotonView PV;
+
+    void Awake()
+    {
+        PV = GetComponent<PhotonView>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemy();
+        if (PV.IsMine)
+        {
+            SpawnEnemy();
+        }      
     }
 
     // Update is called once per frame

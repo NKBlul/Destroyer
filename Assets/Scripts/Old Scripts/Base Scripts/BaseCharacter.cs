@@ -11,7 +11,6 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
     //[SerializeField] string m_CharacterRole = "Null";
 
     public Rigidbody rb;
-
     public PhotonView pv;
 
     protected Rigidbody m_Rigidbody;
@@ -24,7 +23,7 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        if (!pv.IsMine && pv != null)
+        if (!pv.IsMine)
         {
             Destroy(rb);
             Destroy(pv);
@@ -50,22 +49,25 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
         if (m_Health <= 0)
         {
             Die();
+            //pv.RPC("Die", RpcTarget.AllBuffered);
         }
     }
 
+    [PunRPC]
     public void Die()
     {
         Destroy(gameObject);
-        PhotonNetwork.Destroy(gameObject);
-        //if (pv != null && (pv.IsMine || PhotonNetwork.IsMasterClient))
-        //{
-        //    // Transfer ownership to master client if not already owned by it
-        //    if (!pv.IsMine)
-        //    {
-        //        pv.TransferOwnership(PhotonNetwork.MasterClient);
-        //        PhotonNetwork.Destroy(gameObject);
-        //    }
-        //}
+        //PhotonNetwork.Destroy(gameObject);
+        //PhotonNetwork.Destroy(pv);
+        if (pv != null && (pv.IsMine || PhotonNetwork.IsMasterClient))
+        {
+            // Transfer ownership to master client if not already owned by it
+            if (!pv.IsMine)
+            {
+                pv.TransferOwnership(PhotonNetwork.MasterClient);
+                PhotonNetwork.Destroy(gameObject);
+            }
+        }
         Debug.Log(gameObject.name + " ded");
     }
 }
