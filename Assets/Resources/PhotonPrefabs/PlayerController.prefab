@@ -255,8 +255,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.75, y: 1.3, z: 1.75}
+  m_Center: {x: 0, y: -0.3, z: 0}
 --- !u!114 &8756238222273031693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
   ui: {fileID: 903522642830071290}
   cameraHolder: {fileID: 6149131234852570181}
   enemy: {fileID: 4094205507579771915, guid: 88c739025c119ae40bb5dedd60521625, type: 3}
-  mouseSensitivity: 3
+  mouseSensitivity: 0.1
   sprintSpeed: 8
   walkSpeed: 5
   jumpForce: 350

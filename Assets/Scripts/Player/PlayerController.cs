@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
+using UnityEngine.InputSystem;
+using static UnityEditorInternal.ReorderableList;
 
 public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 {
@@ -21,6 +23,9 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 	//[SerializeField] Item[] items;
 	public Rigidbody rigidbody;
+
+	// For controller input system
+	PlayerControls _controllerInput;
 
 	//int itemIndex;
 	//int previousItemIndex = -1;
@@ -39,6 +44,8 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 	PlayerManager playerManager;
 
+	// Controller variables
+	Vector2 _movement, _lookDir;
 
 	void Awake()
 	{
@@ -48,7 +55,20 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 		PV = GetComponent<PhotonView>();
 
 		playerManager = PhotonView.Find((int)PV.InstantiationData[0]).GetComponent<PlayerManager>();
-	}
+
+		_controllerInput = new PlayerControls();
+
+		_controllerInput.Default.Jump.performed += ctx => Jump();
+
+		_controllerInput.Default.Move.performed += ctx => _movement = ctx.ReadValue<Vector2>();
+		_controllerInput.Default.Move.canceled += ctx => _movement = Vector2.zero;
+
+		_controllerInput.Default.LookX.performed += ctx => _lookDir.x = ctx.ReadValue<float>();
+        _controllerInput.Default.LookX.canceled += ctx => _lookDir.x = 0;
+
+        _controllerInput.Default.LookY.performed += ctx => _lookDir.y = ctx.ReadValue<float>();
+        _controllerInput.Default.LookY.canceled += ctx => _lookDir.y = 0;
+    }
 
 	void Start()
 	{
@@ -73,7 +93,7 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 		Look();
 		Move();
-		Jump();
+		//Jump();
 
 		//for(int i = 0; i < items.Length; i++)
 		//{
@@ -120,61 +140,94 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 	void Look()
 	{
-		transform.Rotate(Vector3.up * Input.GetAxisRaw("Mouse X") * mouseSensitivity);
+        //transform.Rotate(Vector3.up * Input.GetAxisRaw("Mouse X") * mouseSensitivity);
 
-		verticalLookRotation += Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
-		verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
+        //verticalLookRotation += Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
+        //verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
 
-		cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
-	}
+        //cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
 
-	void Move()
+
+		// Controller
+        transform.Rotate(Vector3.up * _lookDir.x * mouseSensitivity);
+
+		verticalLookRotation += _lookDir.y * mouseSensitivity;
+        verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
+
+        cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
+    }
+
+    void Move()
 	{
-		Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+		//Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
 
-		moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
+		//moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
+		//rigidbody.MovePosition(transform.position + moveAmount * Time.deltaTime);
+
+
+		// Controller
+		Vector3 moveDir = new Vector3(_movement.x, 0, _movement.y);
+
+        moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (_controllerInput.Default.Run.IsPressed() ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
         rigidbody.MovePosition(transform.position + moveAmount * Time.deltaTime);
     }
 
-	void Jump()
+    void Jump()
 	{
-		if(Input.GetKeyDown(KeyCode.Space) && grounded)
-		{
-			rb.AddForce(transform.up * jumpForce);
-		}
-	}
+		//if(Input.GetKeyDown(KeyCode.Space) && grounded)
+		//{
+		//	rb.AddForce(transform.up * jumpForce);
+		//}
 
-	//void EquipItem(int _index)
-	//{
-	//	if(_index == previousItemIndex)
-	//		return;
-	//
-	//	itemIndex = _index;
-	//
-	//	items[itemIndex].itemGameObject.SetActive(true);
-	//
-	//	if(previousItemIndex != -1)
-	//	{
-	//		items[previousItemIndex].itemGameObject.SetActive(false);
-	//	}
-	//
-	//	previousItemIndex = itemIndex;
-	//
-	//	if(PV.IsMine)
-	//	{
-	//		Hashtable hash = new Hashtable();
-	//		hash.Add("itemIndex", itemIndex);
-	//		PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
-	//	}
-	//}
 
-	//public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
-	//{
-	//	if(changedProps.ContainsKey("itemIndex") && !PV.IsMine && targetPlayer == PV.Owner)
-	//	{
-	//		EquipItem((int)changedProps["itemIndex"]);
-	//	}
-	//}
+		// Controller
+        if (grounded)
+        {
+            rb.AddForce(transform.up * jumpForce);
+        }
+    }
+
+    private void OnEnable()
+    {
+        _controllerInput.Default.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _controllerInput.Default.Disable();
+    }
+
+    //void EquipItem(int _index)
+    //{
+    //	if(_index == previousItemIndex)
+    //		return;
+    //
+    //	itemIndex = _index;
+    //
+    //	items[itemIndex].itemGameObject.SetActive(true);
+    //
+    //	if(previousItemIndex != -1)
+    //	{
+    //		items[previousItemIndex].itemGameObject.SetActive(false);
+    //	}
+    //
+    //	previousItemIndex = itemIndex;
+    //
+    //	if(PV.IsMine)
+    //	{
+    //		Hashtable hash = new Hashtable();
+    //		hash.Add("itemIndex", itemIndex);
+    //		PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+    //	}
+    //}
+
+    //public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
+    //{
+    //	if(changedProps.ContainsKey("itemIndex") && !PV.IsMine && targetPlayer == PV.Owner)
+    //	{
+    //		EquipItem((int)changedProps["itemIndex"]);
+    //	}
+    //}
 
     public void SetGroundedState(bool _grounded)
     {
