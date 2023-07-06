@@ -48,13 +48,13 @@ public class ChangeCamera : MonoBehaviour
         cameras[index].gameObject.SetActive(true);
         if (cameras[index].gameObject.tag == "turret")
         {
-            mainTurret.SetActive();
+            mainTurret.GetComponent<MainTurret>().SetActive();
             cameras[index].enabled= true;
             Camera.main.enabled = false;
         }
         else if (!(cameras[index].gameObject.tag == "turret"))
         {
-            mainTurret.SetNotActive();
+            mainTurret.GetComponent<MainTurret>().SetNotActive();
             cameras[index].enabled= false;
             Camera.main.enabled = true;
         }
