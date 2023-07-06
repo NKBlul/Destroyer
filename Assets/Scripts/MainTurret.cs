@@ -22,6 +22,7 @@ public class MainTurret : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && GetIsActive() == true) 
         {
+            print("fire");
             Fire();
         }
     }
@@ -38,5 +39,20 @@ public class MainTurret : MonoBehaviour
     public bool GetIsActive()
     {
         return isActive;
+    }
+
+    public void SetActive()
+    {
+        isActive = true;   
+    }
+
+    public void SetNotActive()
+    {
+        isActive = false;
+    }
+
+    public Camera GetCamera()
+    {
+        return Camera.main;
     }
 }

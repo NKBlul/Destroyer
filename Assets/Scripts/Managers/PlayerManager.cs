@@ -12,6 +12,8 @@ public class PlayerManager : MonoBehaviour
 	PhotonView PV;
 
 	GameObject controller;
+	MainTurret mainTurret;
+	public Camera mainTurretPOV;
 
 	int kills;
 	int deaths;
@@ -20,6 +22,8 @@ public class PlayerManager : MonoBehaviour
 	void Awake()
 	{
 		PV = GetComponent<PhotonView>();
+		mainTurretPOV = FindObjectOfType<MainTurret>().GetCamera();
+		mainTurret = FindObjectOfType<MainTurret>();
 	}
 
 	void Start()
@@ -70,23 +74,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-		//if (Input.GetKeyDown(KeyCode.T)) 
-		//{
-		//	//SetTurretCam();
-		//}
+		
     }
 
-	public void SetTurretCam()
-	{
-		//if (mainTurretPOV.enabled == true)
-		//{
-		//	Camera.main.enabled = true;
-		//	mainTurretPOV.enabled = false;
-		//}
-		//else
-		//{
-		//	Camera.main.enabled = false;
-		//	mainTurretPOV.enabled = true;
-		//}
-	}
 }

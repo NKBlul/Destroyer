@@ -7,11 +7,14 @@ public class ChangeCamera : MonoBehaviour
     public Camera[] cameras;  // Array to hold your cameras
     private int currentCameraIndex;  // Index of the current active camera
 
+    MainTurret mainTurret;
     private void Start()
     {
         // Set the first camera as the starting camera
         currentCameraIndex = 0;
         ActivateCamera(currentCameraIndex);
+        
+        mainTurret = FindObjectOfType<MainTurret>();
     }
 
     private void Update()
@@ -43,6 +46,18 @@ public class ChangeCamera : MonoBehaviour
     {
         // Activate the specified camera
         cameras[index].gameObject.SetActive(true);
+        if (cameras[index].gameObject.tag == "turret")
+        {
+            mainTurret.SetActive();
+            cameras[index].enabled= true;
+            Camera.main.enabled = false;
+        }
+        else if (!(cameras[index].gameObject.tag == "turret"))
+        {
+            mainTurret.SetNotActive();
+            cameras[index].enabled= false;
+            Camera.main.enabled = true;
+        }
     }
 }
 
