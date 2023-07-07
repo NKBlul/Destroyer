@@ -21,14 +21,10 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 	[SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime;
 
-	//[SerializeField] Item[] items;
 	public Rigidbody rigidbody;
 
-	// For controller input system
-	PlayerControls _controllerInput;
-
-	//int itemIndex;
-	//int previousItemIndex = -1;
+    // For New Input System
+    PlayerControls _controllerInput;
 
 	float verticalLookRotation;
 	bool grounded;
@@ -44,8 +40,8 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 	PlayerManager playerManager;
 
-	// Controller variables
-	Vector2 _movement, _lookDir;
+    // New Input System variables
+    Vector2 _movement, _lookDir;
 
 	void Awake()
 	{
@@ -74,7 +70,6 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 	{
 		if(PV.IsMine)
 		{
-			//EquipItem(0);
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = true;
 		}
@@ -110,7 +105,7 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
         //cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
 
 
-		// Controller
+        // New Input System
         transform.Rotate(Vector3.up * _lookDir.x * mouseSensitivity);
 
 		verticalLookRotation += _lookDir.y * mouseSensitivity;
@@ -121,19 +116,19 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
     void Move()
 	{
-		//Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-		//moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
+        //Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
 
+        //moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
 
-		// Controller
-		Vector3 moveDir = new Vector3(_movement.x, 0, _movement.y);
+        // New Input System
+        Vector3 moveDir = new Vector3(_movement.x, 0, _movement.y);
 
         moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (_controllerInput.Default.Run.IsPressed() ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
     }
 
     void Jump()
 	{
-		// Controller
+        // New Input System
         if (grounded)
         {
             rb.AddForce(transform.up * jumpForce);
