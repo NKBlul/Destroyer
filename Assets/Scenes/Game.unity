@@ -536,6 +536,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship_2.0
       objectReference: {fileID: 0}
+    - target: {fileID: 48394875800175600, guid: c7cd9d45e1561a64893116a9e75f141c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 855752436339743050, guid: c7cd9d45e1561a64893116a9e75f141c,
         type: 3}
       propertyPath: m_RootOrder
@@ -601,7 +606,19 @@ PrefabInstance:
       propertyPath: m_TagString
       value: turret
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7157850740488042564, guid: c7cd9d45e1561a64893116a9e75f141c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952492258220929004, guid: c7cd9d45e1561a64893116a9e75f141c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2052255755101369131, guid: c7cd9d45e1561a64893116a9e75f141c, type: 3}
+    - {fileID: 5654877045296092540, guid: c7cd9d45e1561a64893116a9e75f141c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7cd9d45e1561a64893116a9e75f141c, type: 3}
 --- !u!20 &315366313 stripped
 Camera:
@@ -615,6 +632,38 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 315366312}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &315366315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2437029960869802914, guid: c7cd9d45e1561a64893116a9e75f141c,
+    type: 3}
+  m_PrefabInstance: {fileID: 315366312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &315366316
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315366315}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 34, y: 1, z: 115.66}
+  m_Center: {x: 1.1, y: 6.13, z: 67.12}
+--- !u!65 &315366317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315366315}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 37, y: 1, z: 77.4}
+  m_Center: {x: 1.6, y: 9.58, z: -28}
 --- !u!1001 &325339475
 PrefabInstance:
   m_ObjectHideFlags: 0
