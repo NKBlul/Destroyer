@@ -2704,7 +2704,7 @@ GameObject:
   - component: {fileID: 7058509998894040081}
   m_Layer: 0
   m_Name: MainTurretCam
-  m_TagString: Untagged
+  m_TagString: turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3312,7 +3312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209148323400803038}
   m_LocalRotation: {x: -0, y: 0.9888508, z: -0.14891024, w: 0}
-  m_LocalPosition: {x: 0, y: 52.5, z: 162.6}
+  m_LocalPosition: {x: 0.8, y: 52.5, z: 162.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3502,8 +3502,8 @@ GameObject:
   - component: {fileID: 7296155882208598160}
   - component: {fileID: 4973816125764553057}
   - component: {fileID: 6729414334715305108}
-  - component: {fileID: 5654877045296092540}
-  - component: {fileID: 2052255755101369131}
+  - component: {fileID: 315366316}
+  - component: {fileID: 315366317}
   m_Layer: 6
   m_Name: Ship_body
   m_TagString: Platform
@@ -3576,20 +3576,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5654877045296092540
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2437029960869802914}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 37, y: 1, z: 77.4}
-  m_Center: {x: 1.6, y: 9.58, z: -28}
---- !u!65 &2052255755101369131
+--- !u!65 &315366316
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3602,6 +3589,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 34, y: 1, z: 115.66}
   m_Center: {x: 1.1, y: 6.13, z: 67.12}
+--- !u!65 &315366317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437029960869802914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 37, y: 1, z: 77.4}
+  m_Center: {x: 1.6, y: 9.58, z: -28}
 --- !u!1 &2497023326727316380
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class ChangeCamera : MonoBehaviour
     private int currentCameraIndex;  // Index of the current active camera
 
     MainTurret mainTurret;
+
+   
     private void Start()
     {
         // Set the first camera as the starting camera
@@ -19,6 +21,7 @@ public class ChangeCamera : MonoBehaviour
 
     private void Update()
     {
+
         // Check for key input to switch cameras
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -44,11 +47,14 @@ public class ChangeCamera : MonoBehaviour
 
     private void ActivateCamera(int index)
     {
+       
+
         // Activate the specified camera
         cameras[index].gameObject.SetActive(true);
         if (cameras[index].gameObject.tag == "turret")
         {
             mainTurret.GetComponent<MainTurret>().SetActive();
+            
             cameras[index].enabled= true;
             Camera.main.enabled = false;
         }
