@@ -23,10 +23,9 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        if (!pv.IsMine)
+        if (!pv.IsMine && pv != null)
         {
             Destroy(rb);
-            Destroy(pv);
         }
     }
 
@@ -49,7 +48,7 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
         if (m_Health <= 0)
         {
             Die();
-            //pv.RPC("Die", RpcTarget.AllBuffered);
+            pv.RPC(nameof(Die), pv.Owner);
         }
     }
 
@@ -58,7 +57,6 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
     {
         Destroy(gameObject);
         //PhotonNetwork.Destroy(gameObject);
-        //PhotonNetwork.Destroy(pv);
         if (pv != null && (pv.IsMine || PhotonNetwork.IsMasterClient))
         {
             // Transfer ownership to master client if not already owned by it
@@ -67,7 +65,9 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
                 pv.TransferOwnership(PhotonNetwork.MasterClient);
                 PhotonNetwork.Destroy(gameObject);
             }
+            //Destroy(gameObject);
         }
+        
         Debug.Log(gameObject.name + " ded");
     }
 }

@@ -88,22 +88,6 @@ public class EnemyControllerAI : BaseEnemy
             //UI.instance.enemyState.text = "Enemy State: Attack";
             AttackPlayer();
         }
-
-        //temporary code
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            //if (activateShip == false)
-            //{
-            //    activateShip = true;
-            //    GameObject.Find("Map").GetComponent<MoveShip>().enabled = true;
-            //}
-            //else if (activateShip == true)
-            //{
-            //    activateShip = false;
-            //    GameObject.Find("Map").GetComponent<MoveShip>().enabled = false;
-            //}
-            Die();
-        }
     }
 
     private void Patroling() 

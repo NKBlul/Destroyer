@@ -28,7 +28,8 @@ public class ShootBullet : MonoBehaviour
     {
         if (!pv.IsMine && pv != null)
         {
-            Destroy(pv);
+            //Destroy(pv);
+            return;
         }
     }
     // Update is called once per frame

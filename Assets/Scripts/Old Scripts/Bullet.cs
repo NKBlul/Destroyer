@@ -16,7 +16,6 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         pv = GetComponent<PhotonView>();
         Invoke(nameof(DestroyBullet), life);
-        Destroy(gameObject, life);
     }
 
     // Start is called before the first frame update
@@ -24,7 +23,6 @@ public class Bullet : MonoBehaviour
     {
         if (!pv.IsMine && pv != null)
         {
-            //Destroy(pv);
             Destroy(rb);
         }
     }
@@ -45,14 +43,13 @@ public class Bullet : MonoBehaviour
             EnemyControllerAI.instance.TakeDamage(10);
         }
 
-        Destroy(gameObject);
-        //PhotonNetwork.Destroy(gameObject);
-        DestroyBullet();
+        pv.RPC(nameof(DestroyBullet), pv.Owner);
     }
 
     [PunRPC]
     private void DestroyBullet()
     {
+        Destroy(gameObject);
         if (pv != null && (pv.IsMine || PhotonNetwork.IsMasterClient))
         {
             // Transfer ownership to master client if not already owned by it
@@ -61,6 +58,7 @@ public class Bullet : MonoBehaviour
                 pv.TransferOwnership(PhotonNetwork.MasterClient);
                 PhotonNetwork.Destroy(gameObject);
             }
+
         }
         //PhotonNetwork.Destroy(gameObject);
     }

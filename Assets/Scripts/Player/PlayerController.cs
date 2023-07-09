@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using UnityEngine.InputSystem;
-using static UnityEditorInternal.ReorderableList;
+//using static UnityEditorInternal.ReorderableList;
 
 public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 {
