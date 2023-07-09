@@ -17,7 +17,7 @@ public class ShootBullet : MonoBehaviour
 
     void Awake()
     {
-       pv = GetComponent<PhotonView>();
+       //pv = GetComponent<PhotonView>();
 
        _controllerInput = new PlayerControls();
 
@@ -26,19 +26,19 @@ public class ShootBullet : MonoBehaviour
 
     private void Start()
     {
-        if (!pv.IsMine && pv != null)
-        {
-            //Destroy(pv);
-            return;
-        }
+        //if (!pv.IsMine && pv != null)
+        //{
+        //    //Destroy(pv);
+        //    return;
+        //}
     }
     // Update is called once per frame
     void Update()
     {
-        if (!pv.IsMine)
-        {
-            return;
-        }
+        //if (!pv.IsMine)
+        //{
+        //    return;
+        //}
 
         //if (Input.GetKeyDown(KeyCode.Mouse0))
         //{
