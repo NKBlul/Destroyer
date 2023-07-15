@@ -8,7 +8,7 @@ public class ChangeCamera : MonoBehaviour
     private int currentCameraIndex;  // Index of the current active camera
 
     //public GameObject turret;
-    //public GameObject player;
+    public GameObject player;
     //public GameObject ship;
     MainTurret mainTurret;
 
@@ -61,30 +61,32 @@ public class ChangeCamera : MonoBehaviour
             mainTurret.GetComponent<MainTurret>().SetActive();
 
             cameras[index].enabled = true;
-            Camera.main.enabled = false;
+            //Camera.main.enabled = false;
+            player.GetComponent<PlayerController>().enabled = false;
         }
         else if (!(cameras[index].gameObject.tag == "turret") && mainTurret != null)
         {
             mainTurret.GetComponent<MainTurret>().SetNotActive();
             cameras[index].enabled = false;
-            Camera.main.enabled = true;
+            //Camera.main.enabled = true;
+            player.GetComponent<PlayerController>().enabled = true;
         }
 
-        //if ((currentCameraIndex == 0) && player != null && turret != null && ship != null)
+        //if ((currentCameraIndex == 0) && turret != null)
         //{
         //    player.GetComponent<PlayerController>().enabled = true;
         //    turret.GetComponent<MainTurret>().enabled = false;
         //    ship.GetComponent<MoveShip>().enabled = false;
         //}
 
-        //else if ((currentCameraIndex == 1) && player != null && turret != null && ship != null)
+        //else if ((currentCameraIndex == 1) && turret != null)
         //{
         //    player.GetComponent<PlayerController>().enabled = false;
         //    turret.GetComponent<MainTurret>().enabled = false;
         //    ship.GetComponent<MoveShip>().enabled = true;
         //}
 
-        //else if ((currentCameraIndex == 2) && player != null && turret != null && ship != null)
+        //else if ((currentCameraIndex == 2) && turret != null)
         //{
         //    player.GetComponent<PlayerController>().enabled = false;
         //    turret.GetComponent<MainTurret>().enabled = true;
@@ -104,12 +106,12 @@ public class ChangeCamera : MonoBehaviour
         //    }
 
         //    // Disable ship movement script
-        //    if (ship != null)
+        //    if (turret != null)
         //    {
-        //        MoveShip shipMovement = ship.GetComponent<MoveShip>();
-        //        if (shipMovement != null)
+        //        MainTurret turretMovement = turret.GetComponent<MainTurret>();
+        //        if (turretMovement != null)
         //        {
-        //            shipMovement.enabled = false;
+        //            turretMovement.enabled = false;
         //        }
         //    }
         //}
@@ -126,12 +128,12 @@ public class ChangeCamera : MonoBehaviour
         //    }
 
         //    // Enable ship movement script
-        //    if (ship != null)
+        //    if (turret != null)
         //    {
-        //        MoveShip shipMovement = ship.GetComponent<MoveShip>();
-        //        if (shipMovement != null)
+        //        MainTurret turretMovement = ship.GetComponent<MainTurret>();
+        //        if (turretMovement != null)
         //        {
-        //            shipMovement.enabled = true;
+        //            turretMovement.enabled = true;
         //        }
         //    }
         //}
