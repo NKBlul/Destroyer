@@ -31,7 +31,7 @@ public class MainTurret : MonoBehaviour
         GameObject shot = PhotonNetwork.Instantiate(turretAmmoPrefab.name, turretAmmoSpawn.position,
             turretAmmoSpawn.transform.rotation);
 
-        Rigidbody rb = shot.transform.GetComponent<Rigidbody>();
+        Rigidbody rb = shot.GetComponent<Rigidbody>();
         rb.AddForce(turretAmmoSpawn.forward * speed, ForceMode.Impulse);
     }
 

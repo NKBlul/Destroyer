@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 	PlayerManager playerManager;
 
+	bool inGunneryRadius;
+
     // New Input System variables
     Vector2 _movement, _lookDir;
 
@@ -162,4 +164,22 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 	{
 		playerManager.Die();
 	}
+
+	public bool GetInRadius()
+	{
+		return inGunneryRadius;
+	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "PROXY_Gunnery")
+		{
+			print("Gunneryy");
+			inGunneryRadius = true;
+		}
+		else
+		{
+			inGunneryRadius = false;
+		}
+    }
 }
