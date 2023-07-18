@@ -12,10 +12,11 @@ public class ChangeCamera : MonoBehaviour
     //public GameObject ship;
     MainTurret mainTurret;
 
-
+    bool pc;
 
     private void Start()
     {
+        pc = GetComponent<PlayerController>().GetInRadius();
         // Set the first camera as the starting camera
         currentCameraIndex = 0;
         ActivateCamera(currentCameraIndex);
@@ -29,7 +30,8 @@ public class ChangeCamera : MonoBehaviour
     {
 
         // Check for key input to switch cameras
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) && pc == true)
+
         {
             SwitchCamera();
         }
