@@ -28,7 +28,7 @@ public class ShootBullet : MonoBehaviour
     {
         if (!pv.IsMine && pv != null)
         {
-            //Destroy(pv);
+            _controllerInput.Default.Disable();
             return;
         }
     }
