@@ -30,7 +30,8 @@ public class ChangeCamera : MonoBehaviour
     {
 
         // Check for key input to switch cameras
-        if (Input.GetKeyDown(KeyCode.T) /*&& pc == true*/)
+        if (Input.GetKeyDown(KeyCode.T) && 
+            FindObjectOfType<GunneryProximity>().GetInRad() == true)
         {
             SwitchCamera();
         }
