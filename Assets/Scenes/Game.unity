@@ -598,18 +598,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7cd9d45e1561a64893116a9e75f141c, type: 3}
---- !u!1 &315366313 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4342618917548362218, guid: c7cd9d45e1561a64893116a9e75f141c,
-    type: 3}
-  m_PrefabInstance: {fileID: 315366312}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &315366314 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2111654567258835594, guid: c7cd9d45e1561a64893116a9e75f141c,
-    type: 3}
-  m_PrefabInstance: {fileID: 315366312}
-  m_PrefabAsset: {fileID: 0}
 --- !u!20 &324438477 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8152111482524357838, guid: daeeda549aa18a34893ce9d2a7f9e960,
@@ -2742,7 +2730,6 @@ MonoBehaviour:
   - {fileID: 1877591521}
   - {fileID: 632233439}
   - {fileID: 324438477}
-  player: {fileID: 1488053958305132839, guid: 344b29e78c596ad47b6e205062ce74a6, type: 3}
 --- !u!1001 &1877510484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3249,31 +3236,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1190689451330839931, guid: daeeda549aa18a34893ce9d2a7f9e960,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8dbc1132c001bed4ba06adf8accfc31a, type: 2}
-    - target: {fileID: 6538746518281078926, guid: daeeda549aa18a34893ce9d2a7f9e960,
-        type: 3}
-      propertyPath: turretAmmoSpawn
-      value: 
-      objectReference: {fileID: 315366314}
-    - target: {fileID: 6538746518281078926, guid: daeeda549aa18a34893ce9d2a7f9e960,
-        type: 3}
-      propertyPath: turretAmmoPrefab
-      value: 
-      objectReference: {fileID: 315366313}
-    - target: {fileID: 8395107500296388528, guid: daeeda549aa18a34893ce9d2a7f9e960,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 8395107500296388528, guid: daeeda549aa18a34893ce9d2a7f9e960,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8550267849793957573, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
       propertyPath: m_RootOrder

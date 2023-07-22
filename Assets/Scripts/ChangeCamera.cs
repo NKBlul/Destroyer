@@ -8,22 +8,26 @@ public class ChangeCamera : MonoBehaviour
     private int currentCameraIndex;  // Index of the current active camera
 
     //public GameObject turret;
-    public GameObject player;
-    //public GameObject ship;
-    MainTurret mainTurret;
+    MoveShip ship;
+    PlayerController player;
+    MainTurret turret;
 
     bool pc;
 
     private void Start()
     {
+
+        turret = FindObjectOfType<MainTurret>();
+        player = FindAnyObjectByType<PlayerController>();
+        ship = FindObjectOfType<MoveShip>();
         //pc = GetComponent<PlayerController>().GetInRadius();
         // Set the first camera as the starting camera
         currentCameraIndex = 0;
-        ActivateCamera(currentCameraIndex);
+        //ActivateCamera(currentCameraIndex);
         
-        mainTurret = FindObjectOfType<MainTurret>();
-        //player = FindAnyObjectByType<PlayerController>();
-        //ship = FindObjectOfType<MoveShip>();
+        
+        ActivateCamera(currentCameraIndex);
+
     }
 
     private void Update()
@@ -35,6 +39,10 @@ public class ChangeCamera : MonoBehaviour
         {
             SwitchCamera();
         }
+        //else if (Input.GetKeyDown(KeyCode.T))
+        //    {
+        //    SwitchCamera();
+        //}
 
     }
 
@@ -58,37 +66,37 @@ public class ChangeCamera : MonoBehaviour
     {
         // Activate the specified camera
         cameras[index].gameObject.SetActive(true);
-        if (cameras[index].gameObject.tag == "turret" && mainTurret != null)
-        {
-            mainTurret.GetComponent<MainTurret>().SetActive();
+        //if (cameras[index].gameObject.tag == "turret" && mainTurret != null)
+        //{
+        //    mainTurret.GetComponent<MainTurret>().SetActive();
 
-            cameras[index].enabled = true;
-            //Camera.main.enabled = false;
-            player.GetComponent<PlayerController>().enabled = false;
-        }
-        else if (!(cameras[index].gameObject.tag == "turret") && mainTurret != null)
-        {
-            mainTurret.GetComponent<MainTurret>().SetNotActive();
-            cameras[index].enabled = false;
-            //Camera.main.enabled = true;
-            player.GetComponent<PlayerController>().enabled = true;
-        }
+        //    cameras[index].enabled = true;
+        //    //Camera.main.enabled = false;
+        //    player.GetComponent<PlayerController>().enabled = false;
+        //}
+        //else if (!(cameras[index].gameObject.tag == "turret") && mainTurret != null)
+        //{
+        //    mainTurret.GetComponent<MainTurret>().SetNotActive();
+        //    cameras[index].enabled = false;
+        //    //Camera.main.enabled = true;
+        //    player.GetComponent<PlayerController>().enabled = true;
+        //}
 
-        //if ((currentCameraIndex == 0) && turret != null)
+        //if ((currentCameraIndex == 0) )
         //{
         //    player.GetComponent<PlayerController>().enabled = true;
         //    turret.GetComponent<MainTurret>().enabled = false;
         //    ship.GetComponent<MoveShip>().enabled = false;
         //}
 
-        //else if ((currentCameraIndex == 1) && turret != null)
+        //else if ((currentCameraIndex == 1))
         //{
         //    player.GetComponent<PlayerController>().enabled = false;
         //    turret.GetComponent<MainTurret>().enabled = false;
         //    ship.GetComponent<MoveShip>().enabled = true;
         //}
 
-        //else if ((currentCameraIndex == 2) && turret != null)
+        //else if ((currentCameraIndex == 2))
         //{
         //    player.GetComponent<PlayerController>().enabled = false;
         //    turret.GetComponent<MainTurret>().enabled = true;
