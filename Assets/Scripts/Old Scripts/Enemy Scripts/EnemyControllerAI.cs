@@ -49,16 +49,7 @@ public class EnemyControllerAI : BaseEnemy
     // Update is called once per frame
     void Update()
     {
-        //need to fix
-        if (player)
-        {
-            Patroling();
-        }
-        else
-        {
-            return;
-        }
-        //need to fix
+        UpdatePlayerPos();
 
         //check if player in sight or attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -88,6 +79,11 @@ public class EnemyControllerAI : BaseEnemy
             //UI.instance.enemyState.text = "Enemy State: Attack";
             AttackPlayer();
         }
+    }
+
+    private void UpdatePlayerPos()
+    {
+        player.position = FindObjectOfType<PlayerController>().transform.position;
     }
 
     private void Patroling() 

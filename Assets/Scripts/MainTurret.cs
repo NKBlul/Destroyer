@@ -7,7 +7,7 @@ public class MainTurret : MonoBehaviour
 {
     [SerializeField] public Transform turretAmmoSpawn;
     [SerializeField] private GameObject turretAmmoPrefab;
-    private float speed = 1f;
+    private float speed = 100f;
 
     public bool isActive;
 
