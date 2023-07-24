@@ -39,12 +39,12 @@ public class MoveShip : MonoBehaviour
 
         if (Input.GetKey(KeyCode.I))
         {
-            float acceleration = 50f;
+            float acceleration = 3f;
             shipSpeed += acceleration * Time.deltaTime;
         }
         else
         {
-            float deceleration = 10f;
+            float deceleration = 3f;
             shipSpeed -= deceleration * Time.deltaTime;
         }
 
