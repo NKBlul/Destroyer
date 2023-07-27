@@ -12121,7 +12121,6 @@ Transform:
   m_Children:
   - {fileID: 8639822297895137053}
   - {fileID: 7103883830116720466}
-  - {fileID: 8152111482524357832}
   m_Father: {fileID: 8550267849793957573}
   m_RootOrder: 133
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
@@ -12204,6 +12203,7 @@ MonoBehaviour:
   turretAmmoSpawn: {fileID: 1801330042}
   turretAmmoPrefab: {fileID: 2993423552525669506, guid: e78ab0d4f927b9947b85a3a54f27b2e0,
     type: 3}
+  turret: {fileID: 7103883830116720466}
   isActive: 1
 --- !u!1 &6251186098842107593
 GameObject:
@@ -14789,7 +14789,8 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.00000061035155, z: 1.385586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8152111482524357832}
   m_Father: {fileID: 6088483362095001466}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15410,14 +15411,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8152111482524357833}
-  m_LocalRotation: {x: 0.5124922, y: -0.5124922, z: -0.48718768, w: 0.48718768}
-  m_LocalPosition: {x: -16.46, y: 0.49, z: 19.24}
+  m_LocalRotation: {x: 0.5124921, y: -0.51249224, z: -0.48718768, w: 0.48718762}
+  m_LocalPosition: {x: -16.459986, y: 0.48999575, z: 17.854418}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1801330042}
-  m_Father: {fileID: 6088483362095001466}
-  m_RootOrder: 2
+  m_Father: {fileID: 7103883830116720466}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -92.9, z: -90}
 --- !u!20 &8152111482524357838
 Camera:

@@ -7,6 +7,7 @@ public class MainTurret : MonoBehaviour
 {
     [SerializeField] public Transform turretAmmoSpawn;
     [SerializeField] private GameObject turretAmmoPrefab;
+    [SerializeField] private Transform turret;
     private float speed = 100f;
     //private Vector3 rotateSpeed = new Vector3(0, 30, 0);
     private float rotateSpeed = 30f;
@@ -22,18 +23,29 @@ public class MainTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GetIsActive() == true && ChangeCamera.Instance.turretCam == true) 
+        if (GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
         {
-            Fire();
-        }
-        if (Input.GetKey(KeyCode.A) && GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
-        {
-            TurnLeft();
-        }
-        if (Input.GetKey(KeyCode.D) && GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
-        {
-            TurnRight();
-        }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Fire();
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                TurnLeft();
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                TurnRight();
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                Up();
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                Down();
+            }
+        }      
     }
 
     private void Fire()
@@ -49,20 +61,30 @@ public class MainTurret : MonoBehaviour
     {
         transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime, Space.Self);
         float clampRotation = Mathf.Clamp(transform.eulerAngles.z, -180, -90);
-        if (transform.rotation.z == -180.0f)
-        {
-            rotateSpeed = 0;
-        }
+        //if (transform.eulerAngles.z <= -180.0f)
+        //{
+        //    transform.rotation.z = 180.0f;
+        //}
     }    
 
     private void TurnRight() 
     {
         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
         float clampRotation = Mathf.Clamp(transform.eulerAngles.z, -90, 0);
-        if (transform.rotation.z == 0f)
-        {
-            rotateSpeed = 0;
-        }
+        //if (transform.eulerAngles.z >= 0f)
+        //{
+        //    rotateSpeed = 0;
+        //}
+    }
+
+    private void Up()
+    {
+        turret.Rotate(Vector3.up * rotateSpeed * Time.deltaTime, Space.Self);
+    }
+
+    private void Down()
+    {
+        turret.Rotate(Vector3.down * rotateSpeed * Time.deltaTime, Space.Self);
     }
 
     public bool GetIsActive()
