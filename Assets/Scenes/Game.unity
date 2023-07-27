@@ -541,6 +541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship_2.0
       objectReference: {fileID: 0}
+    - target: {fileID: 48394875800175600, guid: c7cd9d45e1561a64893116a9e75f141c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 855752436339743050, guid: c7cd9d45e1561a64893116a9e75f141c,
         type: 3}
       propertyPath: m_RootOrder
@@ -2273,6 +2278,9 @@ MonoBehaviour:
   - {fileID: 1877591521}
   - {fileID: 632233439}
   - {fileID: 324438477}
+  playerCam: 0
+  shipCam: 0
+  turretCam: 0
 --- !u!1001 &1877510484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2882,10 +2890,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8152111482567657772, guid: daeeda549aa18a34893ce9d2a7f9e960,
+    - target: {fileID: 8152111482275486981, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
-      propertyPath: m_Convex
-      value: 0
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8550267849793957573, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}

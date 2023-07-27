@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ChangeCamera : MonoBehaviour
 {
+    public static ChangeCamera Instance;
+
     public Camera[] cameras;  // Array to hold your cameras
     private int currentCameraIndex;  // Index of the current active camera
 
@@ -12,22 +14,26 @@ public class ChangeCamera : MonoBehaviour
     PlayerController player;
     MainTurret turret;
 
-    bool pc;
+    public bool playerCam;
+    public bool shipCam;
+    public bool turretCam;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
-
         turret = FindObjectOfType<MainTurret>();
         player = FindAnyObjectByType<PlayerController>();
         ship = FindObjectOfType<MoveShip>();
         //pc = GetComponent<PlayerController>().GetInRadius();
         // Set the first camera as the starting camera
         currentCameraIndex = 0;
-        //ActivateCamera(currentCameraIndex);
-        
+        //ActivateCamera(currentCameraIndex);       
         
         ActivateCamera(currentCameraIndex);
-
     }
 
     private void Update()
@@ -39,11 +45,7 @@ public class ChangeCamera : MonoBehaviour
         {
             SwitchCamera();
         }
-        //else if (Input.GetKeyDown(KeyCode.T))
-        //    {
-        //    SwitchCamera();
-        //}
-
+        CheckCamera();
     }
 
     public void SwitchCamera()
@@ -88,21 +90,21 @@ public class ChangeCamera : MonoBehaviour
         //    turret.GetComponent<MainTurret>().enabled = false;
         //    ship.GetComponent<MoveShip>().enabled = false;
         //}
-
+        //
         //else if ((currentCameraIndex == 1))
         //{
         //    player.GetComponent<PlayerController>().enabled = false;
         //    turret.GetComponent<MainTurret>().enabled = false;
         //    ship.GetComponent<MoveShip>().enabled = true;
         //}
-
+        //
         //else if ((currentCameraIndex == 2))
         //{
         //    player.GetComponent<PlayerController>().enabled = false;
         //    turret.GetComponent<MainTurret>().enabled = true;
         //    ship.GetComponent<MoveShip>().enabled = false;
         //}
-
+        //
         //if (index == 2) // Assuming the main turret camera is at index 2
         //{
         //    // Disable player movement script
@@ -114,7 +116,7 @@ public class ChangeCamera : MonoBehaviour
         //            playerMovement.enabled = false;
         //        }
         //    }
-
+        //
         //    // Disable ship movement script
         //    if (turret != null)
         //    {
@@ -136,7 +138,7 @@ public class ChangeCamera : MonoBehaviour
         //            playerMovement.enabled = true;
         //        }
         //    }
-
+        //
         //    // Enable ship movement script
         //    if (turret != null)
         //    {
@@ -147,8 +149,28 @@ public class ChangeCamera : MonoBehaviour
         //        }
         //    }
         //}
+    }
 
-
+    private void CheckCamera()
+    {
+        if (cameras[currentCameraIndex] == cameras[0])
+        {
+            playerCam = true;
+            shipCam = false;
+            turretCam = false;
+        }
+        else if (cameras[currentCameraIndex] == cameras[1])
+        {
+            playerCam = false;
+            shipCam = true;
+            turretCam = false;
+        }
+        else if (cameras[currentCameraIndex] == cameras[2])
+        {
+            playerCam = false;
+            shipCam = false;
+            turretCam = true;
+        }
     }
 }
 

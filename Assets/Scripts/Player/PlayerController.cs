@@ -86,9 +86,12 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 	{
 		if(!PV.IsMine)
 			return;
-
-		Look();
-		Move();
+		
+		if (ChangeCamera.Instance.playerCam == true)
+		{
+            Move();
+            Look();
+        }
 
 		if(transform.position.y < -10f) // Die if you fall out of the world
 		{
@@ -130,10 +133,13 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
     void Jump()
 	{
         // New Input System
-        if (grounded)
-        {
-            rb.AddForce(transform.up * jumpForce);
-        }
+		if (ChangeCamera.Instance.playerCam == true)
+		{
+            if (grounded)
+            {
+                rb.AddForce(transform.up * jumpForce);
+            }
+        }     
     }
 
     private void OnEnable()
