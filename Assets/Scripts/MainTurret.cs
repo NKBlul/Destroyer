@@ -14,7 +14,7 @@ public class MainTurret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetNotActive();
     }
 
     // Update is called once per frame
@@ -23,6 +23,14 @@ public class MainTurret : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && GetIsActive() == true) 
         {
             Fire();
+        }
+        if (Input.GetKeyDown(KeyCode.A) && GetIsActive() == true)
+        {
+            TurnLeft();
+        }
+        if (Input.GetKeyDown(KeyCode.D) && GetIsActive() == true)
+        {
+            TurnRight();
         }
     }
 
@@ -33,6 +41,16 @@ public class MainTurret : MonoBehaviour
 
         Rigidbody rb = shot.GetComponent<Rigidbody>();
         rb.AddForce(turretAmmoSpawn.forward * speed, ForceMode.Impulse);
+    }
+
+    void TurnLeft()
+    {
+        
+    }    
+
+    private void TurnRight() 
+    {
+        print(6);
     }
 
     public bool GetIsActive()
@@ -47,7 +65,6 @@ public class MainTurret : MonoBehaviour
 
     public void SetNotActive()
     {
-        print("active");
         isActive = false;
     }
 
