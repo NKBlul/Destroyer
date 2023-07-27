@@ -6,13 +6,14 @@ public class OnShip : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
             other.transform.SetParent(transform);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
             other.transform.SetParent(null);
     }
+
 }
