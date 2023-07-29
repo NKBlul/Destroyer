@@ -83,8 +83,12 @@ public class EnemyControllerAI : BaseEnemy
 
     private void UpdatePlayerPos()
     {
-        player.position = FindObjectOfType<PlayerController>().transform.position;
-    }
+		PlayerController playerController = FindObjectOfType<PlayerController>();
+		if (playerController != null)
+		{
+			player.position = playerController.transform.position;
+		}
+	}
 
     private void Patroling() 
     {

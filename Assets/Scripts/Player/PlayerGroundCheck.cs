@@ -13,6 +13,7 @@ public class PlayerGroundCheck : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("groundcheck Entered");
         if (other.gameObject == playerController.gameObject)
             return;
 
@@ -21,17 +22,10 @@ public class PlayerGroundCheck : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == playerController.gameObject)
+		Debug.Log("groundcheck Exit");
+		if (other.gameObject == playerController.gameObject)
             return;
 
         playerController.SetGroundedState(false);
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject == playerController.gameObject)
-            return;
-
-        playerController.SetGroundedState(true);
     }
 }

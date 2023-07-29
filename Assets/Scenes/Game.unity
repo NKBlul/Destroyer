@@ -2945,5 +2945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship_2023_06_25
       objectReference: {fileID: 0}
+    - target: {fileID: 9071225889078457471, guid: daeeda549aa18a34893ce9d2a7f9e960,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daeeda549aa18a34893ce9d2a7f9e960, type: 3}
