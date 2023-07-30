@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-	public string menuName;
+    public static Menu Instance;
+    public string menuName;
 	public bool open;
 
-	public void Open()
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    public void Open()
 	{
 		open = true;
 		gameObject.SetActive(true);

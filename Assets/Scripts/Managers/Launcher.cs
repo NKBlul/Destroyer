@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 using TMPro;
 using Photon.Realtime;
@@ -18,6 +19,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 	[SerializeField] Transform playerListContent;
 	[SerializeField] GameObject PlayerListItemPrefab;
 	[SerializeField] GameObject startGameButton;
+	[SerializeField] Image logo;
 
 	void Awake()
 	{
@@ -39,7 +41,12 @@ public class Launcher : MonoBehaviourPunCallbacks
 
 	IEnumerator LogoTime()
 	{
-		yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f);
+		if (Menu.Instance.menuName == "loading")
+		{
+			//do smth to the logo
+			Debug.Log("logo");
+		}
         MenuManager.Instance.OpenMenu("title");
         Debug.Log("Joined Lobby");
     }
