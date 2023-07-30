@@ -37,10 +37,16 @@ public class Launcher : MonoBehaviourPunCallbacks
 		PhotonNetwork.AutomaticallySyncScene = true;
 	}
 
+	IEnumerator LogoTime()
+	{
+		yield return new WaitForSeconds(1f);
+        MenuManager.Instance.OpenMenu("title");
+        Debug.Log("Joined Lobby");
+    }
+
 	public override void OnJoinedLobby()
-	{ 
-		MenuManager.Instance.OpenMenu("title");
-		Debug.Log("Joined Lobby");
+	{
+		StartCoroutine(LogoTime());
 	}
 
 	public void CreateRoom()
