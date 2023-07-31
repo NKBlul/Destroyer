@@ -45,7 +45,9 @@ public class MainTurret : MonoBehaviour
             {
                 Down();
             }
-        }      
+        }
+
+        
     }
 
     private void Fire()
@@ -59,22 +61,15 @@ public class MainTurret : MonoBehaviour
 
     void TurnLeft()
     {
-        transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime, Space.Self);
         float clampRotation = Mathf.Clamp(transform.eulerAngles.z, -180, -90);
-        //if (transform.eulerAngles.z <= -180.0f)
-        //{
-        //    transform.rotation.z = 180.0f;
-        //}
+        
+        transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime, Space.Self);
     }    
 
     private void TurnRight() 
     {
+        float clampRotation = Mathf.Clamp(transform.eulerAngles.y, -90, 0);
         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
-        float clampRotation = Mathf.Clamp(transform.eulerAngles.z, -90, 0);
-        //if (transform.eulerAngles.z >= 0f)
-        //{
-        //    rotateSpeed = 0;
-        //}
     }
 
     private void Up()
