@@ -21,10 +21,15 @@ public class Launcher : MonoBehaviourPunCallbacks
 	[SerializeField] GameObject startGameButton;
 	[SerializeField] Image logo;
 
+    private bool buttonPressed;
+	private bool onMaster;
+
 	void Awake()
 	{
 		Instance = this;
-	}
+        buttonPressed = false;
+        onMaster = false;
+    }
 
 	void Start()
 	{
@@ -35,28 +40,53 @@ public class Launcher : MonoBehaviourPunCallbacks
 	public override void OnConnectedToMaster()
 	{
 		Debug.Log("Connected to Master");
-		PhotonNetwork.JoinLobby();
-		PhotonNetwork.AutomaticallySyncScene = true;
+		onMaster = true;
+        PhotonNetwork.AutomaticallySyncScene = true;
 	}
 
-	IEnumerator LogoTime()
-	{
-        yield return new WaitForSeconds(1f);
-		if (Menu.Instance.menuName == "loading")
+    private void Update()
+    {
+        if (Input.anyKeyDown && buttonPressed == false && onMaster == true)
 		{
-			//do smth to the logo
-			Debug.Log("logo");
+			buttonPressed = true;
+            PhotonNetwork.JoinLobby();
+        }
+    }
+
+	private void FadeOutLogo()
+	{
+		Color originalColor = logo.color;
+		float elapsedTime = 0f;
+		float fadeTime = 3f;
+
+		while (elapsedTime < fadeTime)
+		{
+			elapsedTime += Time.deltaTime;
+			float alpha = 1f - (elapsedTime/5f); //above fade time, higher alpha. below fade time, lower alpha 
+			Color newColor = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+			logo.color = newColor;
 		}
+		//Color transparentColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
+		//logo.color = transparentColor;
+	}
+
+    IEnumerator LogoTime()
+	{
+		if (Menu.Instance.menuName == "logo")
+		{
+			FadeOutLogo();
+		}
+		yield return new WaitForSeconds(1f);
         MenuManager.Instance.OpenMenu("title");
         Debug.Log("Joined Lobby");
     }
 
 	public override void OnJoinedLobby()
 	{
-		StartCoroutine(LogoTime());
-	}
+        StartCoroutine(LogoTime());      
+    }
 
-	public void CreateRoom()
+    public void CreateRoom()
 	{
 		if(string.IsNullOrEmpty(roomNameInputField.text))
 		{
