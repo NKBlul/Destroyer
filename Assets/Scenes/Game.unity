@@ -1368,7 +1368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 780472627}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,6 +1629,10 @@ PrefabInstance:
     - target: {fileID: 1204476390, guid: 85c6909fca7188740b930b5ec2b7eb88, type: 3}
       propertyPath: viewIdField
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204476391, guid: 85c6909fca7188740b930b5ec2b7eb88, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4820152028204504868, guid: 85c6909fca7188740b930b5ec2b7eb88,
         type: 3}
@@ -2555,7 +2559,7 @@ GameObject:
   - component: {fileID: 1968308730}
   - component: {fileID: 1968308729}
   - component: {fileID: 1968308728}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Plane(PLACEHOLDER)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
