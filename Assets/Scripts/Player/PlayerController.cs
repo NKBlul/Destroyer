@@ -93,6 +93,17 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
             Look();
         }
 
+		if (ChangeCamera.Instance.minigameCam == true)
+		{
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+		else
+		{
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
 		if(transform.position.y < -10f) // Die if you fall out of the world
 		{
 			Die();

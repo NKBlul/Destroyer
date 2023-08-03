@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeCamera : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class ChangeCamera : MonoBehaviour
     public bool playerCam;
     public bool shipCam;
     public bool turretCam;
+    public bool minigameCam;
 
     private void Awake()
     {
@@ -46,6 +48,7 @@ public class ChangeCamera : MonoBehaviour
             SwitchCamera();
         }
         CheckCamera();
+        DisablePlayerCanvas();
     }
 
     public void SwitchCamera()
@@ -153,24 +156,46 @@ public class ChangeCamera : MonoBehaviour
 
     private void CheckCamera()
     {
-        if (cameras[currentCameraIndex] == cameras[0])
+        if (cameras[currentCameraIndex] == cameras[0]) //player cam
         {
             playerCam = true;
             shipCam = false;
             turretCam = false;
+            minigameCam = false;
         }
-        else if (cameras[currentCameraIndex] == cameras[1])
+        else if (cameras[currentCameraIndex] == cameras[1]) //ship cam
         {
             playerCam = false;
             shipCam = true;
             turretCam = false;
+            minigameCam = false;
         }
-        else if (cameras[currentCameraIndex] == cameras[2])
+        else if (cameras[currentCameraIndex] == cameras[2]) //turret cam
         {
             playerCam = false;
             shipCam = false;
             turretCam = true;
+            minigameCam = false;
         }
+        else if (cameras[currentCameraIndex] == cameras[3]) //minigame cam
+        {
+            playerCam = false;
+            shipCam = false;
+            turretCam = false;
+            minigameCam = true;
+        }
+    }
+
+    private void DisablePlayerCanvas()
+    {
+        //if (playerCam == false)
+        //{
+        //    player.GetComponentInChildren<Image>().enabled = false;
+        //}
+        //else
+        //{
+        //    player.GetComponentInChildren<Image>().enabled = true;
+        //}
     }
 }
 
