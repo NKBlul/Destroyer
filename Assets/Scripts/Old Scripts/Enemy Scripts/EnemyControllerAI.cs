@@ -83,10 +83,11 @@ public class EnemyControllerAI : BaseEnemy
 
     private void UpdatePlayerPos()
     {
-		PlayerController playerController = FindObjectOfType<PlayerController>();
-		if (playerController != null)
+		//PlayerController playerController = FindObjectOfType<PlayerController>();
+        MoveShip ship = FindObjectOfType<MoveShip>();
+		if (ship != null)
 		{
-			player.position = playerController.transform.position;
+			player.position = ship.transform.position;
 		}
 	}
 
