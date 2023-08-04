@@ -20,9 +20,11 @@ public class MainTurret : MonoBehaviour
         //SetNotActive();
     }
 
+
     // Update is called once per frame
     void Update()
     {
+        float x = transform.rotation.x;
         if (GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -45,7 +47,20 @@ public class MainTurret : MonoBehaviour
             {
                 Down();
             }
+
+            if(transform.rotation.x < -0.65)
+            {
+                print("right");
+                //transform.rotation = new Vector3(-0.65f, -0.5f, -0.5f);
+            }
+            if (transform.rotation.x > -0.30)
+            {
+                print("left");
+                //transform.rotation = new Vector3(-0.30f, -0.5f, -0.5f);
+            }
+            print(transform.rotation.x);
         }
+        
 
         
     }
