@@ -16,7 +16,7 @@ public class MainTurret : MonoBehaviour
 
     private float minZRot = 180;
     private float maxZRot = 360;
-    private float minYRot = 0;
+    private float minYRot = 1f;
     private float maxYRot = 25;
     private Vector3 currentRotation;
     private Vector3 turretCurrentRotation;
@@ -55,7 +55,7 @@ public class MainTurret : MonoBehaviour
                 Down();
             }
             //Debug.Log("base" + transform.localEulerAngles);
-            //Debug.Log("turret" + turret.transform.localEulerAngles);
+            Debug.Log("turret" + turret.transform.localEulerAngles);
         }       
     }
 
@@ -84,12 +84,20 @@ public class MainTurret : MonoBehaviour
     {
         turretCurrentRotation.y = Mathf.Clamp(currentRotation.y, minYRot, maxYRot);
         turret.Rotate(Vector3.up * rotateSpeed * Time.deltaTime, Space.Self);
+        if (turret.localEulerAngles.y >= maxYRot)
+        {
+            turret.localEulerAngles = new Vector3(0, maxYRot, 0);
+        }
     }
 
     private void Down()
     {
         turretCurrentRotation.y = Mathf.Clamp(currentRotation.y, minYRot, maxYRot);
         turret.Rotate(Vector3.down * rotateSpeed * Time.deltaTime, Space.Self);
+        if (turret.localEulerAngles.y <= minYRot)
+        {
+            turret.localEulerAngles = new Vector3(0, minYRot, 0);
+        }
     }
 
     public bool GetIsActive()

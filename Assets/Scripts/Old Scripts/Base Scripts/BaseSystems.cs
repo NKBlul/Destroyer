@@ -36,7 +36,7 @@ public class BaseSystems : MonoBehaviour
     {
         if (m_Health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

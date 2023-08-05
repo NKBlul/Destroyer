@@ -1981,7 +1981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204476391, guid: 85c6909fca7188740b930b5ec2b7eb88, type: 3}
       propertyPath: sightRange
-      value: 18
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1204476391, guid: 85c6909fca7188740b930b5ec2b7eb88, type: 3}
       propertyPath: whatIsGround.m_Bits
@@ -3802,7 +3802,7 @@ PrefabInstance:
     - target: {fileID: 7103883830116720466, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.999962
       objectReference: {fileID: 0}
     - target: {fileID: 7103883830116720466, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
@@ -3812,7 +3812,7 @@ PrefabInstance:
     - target: {fileID: 7103883830116720466, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.008726558
       objectReference: {fileID: 0}
     - target: {fileID: 7103883830116720466, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
@@ -3822,7 +3822,7 @@ PrefabInstance:
     - target: {fileID: 7103883830116720466, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8550267849793957573, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
