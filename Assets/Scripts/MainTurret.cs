@@ -15,7 +15,7 @@ public class MainTurret : MonoBehaviour
     public bool isActive;
 
     private float minZRot = 180;
-    private float maxZRot = 360;
+    private float maxZRot = 359;
     private float minYRot = 1f;
     private float maxYRot = 25;
     private Vector3 currentRotation;
@@ -31,7 +31,6 @@ public class MainTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float x = transform.rotation.x;
         if (GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -54,8 +53,6 @@ public class MainTurret : MonoBehaviour
             {
                 Down();
             }
-            //Debug.Log("base" + transform.localEulerAngles);
-            Debug.Log("turret" + turret.transform.localEulerAngles);
         }       
     }
 
@@ -70,19 +67,24 @@ public class MainTurret : MonoBehaviour
 
     void TurnLeft()
     {
-        currentRotation.z = Mathf.Clamp(currentRotation.z, minZRot, maxZRot);
         transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime, Space.Self);
+        if (transform.localEulerAngles.y <= minZRot)
+        {
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, minZRot, transform.localEulerAngles.z);
+        }
     }    
 
     private void TurnRight() 
     {
-        currentRotation.z = Mathf.Clamp(currentRotation.z, minZRot, maxZRot);
         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
+        if (transform.localEulerAngles.y >= maxZRot)
+        {
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, maxZRot, transform.localEulerAngles.z);
+        }
     }
 
     private void Up()
     {
-        turretCurrentRotation.y = Mathf.Clamp(currentRotation.y, minYRot, maxYRot);
         turret.Rotate(Vector3.up * rotateSpeed * Time.deltaTime, Space.Self);
         if (turret.localEulerAngles.y >= maxYRot)
         {
@@ -92,7 +94,6 @@ public class MainTurret : MonoBehaviour
 
     private void Down()
     {
-        turretCurrentRotation.y = Mathf.Clamp(currentRotation.y, minYRot, maxYRot);
         turret.Rotate(Vector3.down * rotateSpeed * Time.deltaTime, Space.Self);
         if (turret.localEulerAngles.y <= minYRot)
         {
