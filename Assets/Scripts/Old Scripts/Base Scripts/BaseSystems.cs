@@ -1,74 +1,42 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using Unity.VisualScripting;
-//using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-//public class BaseSystems : MonoBehaviour
-//{
-//    [SerializeField] int m_minHealth;
-//    [SerializeField] int m_maxHealth;
-//    [SerializeField] float m_currentHealth;
-//    [SerializeField] float m_damageTaken1;
-//    [SerializeField] float m_damageTaken2;
-//    [SerializeField] float m_damageTaken3;
-//    [SerializeField] bool b_isDamaged;
-//    [SerializeField] bool b_isSeverelyDamaged;
-//    // Start is called before the first frame update
-//    void Start()
-//    {
-//        m_minHealth = 0;
-//        m_maxHealth = 1000;
-//        m_currentHealth= m_maxHealth;
-      
-//        b_isDamaged = false;
-//        b_isSeverelyDamaged = false;
-//    }
+public class BaseSystems : MonoBehaviour
+{
+    [SerializeField] public float m_Health = 100.0f;
+    [SerializeField] public float m_DamageDealt = 20.0f;
 
-//    public void Destroy()
-//    {
-//        //
-//    }
+    public static BaseSystems instance;
 
-//    public void Damage(float damageTaken)
-//    {
-//        m_currentHealth -= damageTaken; 
-        
-//        if (m_currentHealth <= m_minHealth)
-//        {
-//            Destroy();
-//        }
-//    }
+    private void Awake()
+    {
+        instance = this; 
+    }
 
-//    public void is_Damaged()
-//    {
-//        if (b_isDamaged) 
-//        { 
-//            //
-//        }
+    // Start is called before the first frame update
+    void Start()
+    {
 
-//        if (b_isSeverelyDamaged)
-//        {
-//            //
-//        }
-//    }
+    }
 
-//    public void ClampHealth()
-//    {
-//        if (m_currentHealth > m_maxHealth) 
-//        { 
-//            m_currentHealth = m_maxHealth;
-//        }
+    // Update is called once per frame
+    void Update()
+    {
 
-//        if (m_currentHealth <= m_minHealth)
-//        {
-//            Destroy();
-//        }
-//    }
+    }
 
-//    // Update is called once per frame
-//    void Update()
-//    {
-//        ClampHealth();
-//        is_Damaged();   
-//    }
-//}
+    public void TakeDamage(int damage)
+    {
+        m_Health -= damage;
+        CheckHealth();     
+    }
+
+    private void CheckHealth() 
+    {
+        if (m_Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+}

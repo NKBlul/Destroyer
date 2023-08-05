@@ -26,6 +26,7 @@ public class EnemyControllerAI : BaseEnemy
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
+    int damage = 10;
 
     //states
     public float sightRange, attackRange;
@@ -142,7 +143,7 @@ public class EnemyControllerAI : BaseEnemy
         if (!alreadyAttacked)
         {
             //attack code here
-            Debug.Log("Attack player");
+            BaseSystems.instance.TakeDamage(damage);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

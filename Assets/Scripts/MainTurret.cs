@@ -14,6 +14,13 @@ public class MainTurret : MonoBehaviour
 
     public bool isActive;
 
+    private float minZRot = 180;
+    private float maxZRot = 360;
+    private float minYRot = 0;
+    private float maxYRot = 25;
+    private Vector3 currentRotation;
+    private Vector3 turretCurrentRotation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +31,7 @@ public class MainTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = transform.rotation.x;
+        //float x = transform.rotation.x;
         if (GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -47,22 +54,9 @@ public class MainTurret : MonoBehaviour
             {
                 Down();
             }
-
-            if(transform.rotation.x < -0.65)
-            {
-                print("right");
-                //transform.rotation = new Vector3(-0.65f, -0.5f, -0.5f);
-            }
-            if (transform.rotation.x > -0.30)
-            {
-                print("left");
-                //transform.rotation = new Vector3(-0.30f, -0.5f, -0.5f);
-            }
-            print(transform.rotation.x);
-        }
-        
-
-        
+            //Debug.Log("base" + transform.localEulerAngles);
+            //Debug.Log("turret" + turret.transform.localEulerAngles);
+        }       
     }
 
     private void Fire()
@@ -76,24 +70,25 @@ public class MainTurret : MonoBehaviour
 
     void TurnLeft()
     {
-        float clampRotation = Mathf.Clamp(transform.eulerAngles.z, -180, -90);
-        
+        currentRotation.z = Mathf.Clamp(currentRotation.z, minZRot, maxZRot);
         transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime, Space.Self);
     }    
 
     private void TurnRight() 
     {
-        float clampRotation = Mathf.Clamp(transform.eulerAngles.y, -90, 0);
+        currentRotation.z = Mathf.Clamp(currentRotation.z, minZRot, maxZRot);
         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
     }
 
     private void Up()
     {
+        turretCurrentRotation.y = Mathf.Clamp(currentRotation.y, minYRot, maxYRot);
         turret.Rotate(Vector3.up * rotateSpeed * Time.deltaTime, Space.Self);
     }
 
     private void Down()
     {
+        turretCurrentRotation.y = Mathf.Clamp(currentRotation.y, minYRot, maxYRot);
         turret.Rotate(Vector3.down * rotateSpeed * Time.deltaTime, Space.Self);
     }
 
