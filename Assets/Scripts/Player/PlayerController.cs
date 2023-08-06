@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
     Vector3 smoothMoveVelocity;
 	Vector3 moveAmount;
 
+	public GameObject CrossHair;
+
 	Rigidbody rb;
 
 	PhotonView PV;
@@ -39,6 +41,12 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 	float currentHealth = maxHealth;
 
 	PlayerManager playerManager;
+	//public GameObject shipCamera;
+ //   public GameObject turretCamera;
+
+ //   public GameObject minigameCamera;
+
+
 
 
     // New Input System variables
@@ -86,19 +94,40 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 	{
 		if(!PV.IsMine)
 			return;
-		
-		if (ChangeCamera.Instance.playerCam == true)
-		{
+
+        if (ChangeCamera.Instance.playerCam == true)
+        {
             Move();
             Look();
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
+            CrossHair.SetActive(true);
         }
 
-		if (ChangeCamera.Instance.minigameCam == true)
+        else if (ChangeCamera.Instance.minigameCam == true)
 		{
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            CrossHair.SetActive(false);
         }
-		else
+
+        else if (ChangeCamera.Instance.shipCam == true)
+        {
+            Cursor.lockState= CursorLockMode.None;
+            Cursor.visible = false; 
+            CrossHair.SetActive(false);
+        }
+
+        else if (ChangeCamera.Instance.turretCam == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+            CrossHair.SetActive(true);
+        }
+
+        
+
+        else
 		{
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
