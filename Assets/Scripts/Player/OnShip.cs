@@ -25,10 +25,6 @@ public class OnShip : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.transform.SetParent(null);
-            print("Leaving");
         }
     }
-
-    
-
 }
