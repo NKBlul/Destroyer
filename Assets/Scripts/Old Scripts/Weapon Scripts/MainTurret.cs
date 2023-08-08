@@ -2,6 +2,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MainTurret : MonoBehaviour
 {
@@ -21,35 +22,41 @@ public class MainTurret : MonoBehaviour
     private Vector3 currentRotation;
     private Vector3 turretCurrentRotation;
 
-    // Start is called before the first frame update
-    void Start()
+    PlayerControls _controllerInput;
+
+    void Awake()
     {
-        //SetNotActive();
+        _controllerInput = new PlayerControls();
+
+        _controllerInput.Turret.Shoot.performed += ctx => Fire();
+
+        //_controllerInput.Turret.TurnLeft.performed += ctx => TurnLeft();
+        //_controllerInput.Turret.TurnRight.performed += ctx => TurnRight();
+        //_controllerInput.Turret.LookUp.performed += ctx => Up();
+        //_controllerInput.Turret.LookDown.performed += ctx => Down();
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         if (GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Fire();
-            }
-            if (Input.GetKey(KeyCode.A))
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    Fire();
+            //}
+            if (_controllerInput.Turret.TurnLeft.IsPressed())
             {
                 TurnLeft();
             }
-            if (Input.GetKey(KeyCode.D))
+            if (_controllerInput.Turret.TurnRight.IsPressed())
             {
                 TurnRight();
             }
-            if (Input.GetKey(KeyCode.W))
+            if (_controllerInput.Turret.LookUp.IsPressed())
             {
                 Up();
             }
-            if (Input.GetKey(KeyCode.S))
+            if (_controllerInput.Turret.LookDown.IsPressed())
             {
                 Down();
             }
@@ -58,59 +65,62 @@ public class MainTurret : MonoBehaviour
 
     private void Fire()
     {
-        GameObject shot = PhotonNetwork.Instantiate(turretAmmoPrefab.name, turretAmmoSpawn.position,
+        if (GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
+        {
+            GameObject shot = PhotonNetwork.Instantiate(turretAmmoPrefab.name, turretAmmoSpawn.position,
             turretAmmoSpawn.transform.rotation);
 
-        Rigidbody rb = shot.GetComponent<Rigidbody>();
-        rb.AddForce(turretAmmoSpawn.forward * speed, ForceMode.Impulse);
+            Rigidbody rb = shot.GetComponent<Rigidbody>();
+            rb.AddForce(turretAmmoSpawn.forward * speed, ForceMode.Impulse);
+        }
     }
 
     void TurnLeft()
     {
-        transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime, Space.Self);
-        if (transform.localEulerAngles.y <= minZRot)
-        {
-            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, minZRot, transform.localEulerAngles.z);
-        }
-    }    
+            transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime, Space.Self);
+            if (transform.localEulerAngles.y <= minZRot)
+            {
+                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, minZRot, transform.localEulerAngles.z);
+            }
+    }
 
-    private void TurnRight() 
+    private void TurnRight()
     {
-        transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
-        if (transform.localEulerAngles.y >= maxZRot)
-        {
-            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, maxZRot, transform.localEulerAngles.z);
-        }
+            transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
+            if (transform.localEulerAngles.y >= maxZRot)
+            {
+                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, maxZRot, transform.localEulerAngles.z);
+            }
     }
 
     private void Up()
     {
-        turret.Rotate(Vector3.up * rotateSpeed * Time.deltaTime, Space.Self);
-        if (turret.localEulerAngles.y >= maxYRot)
-        {
-            turret.localEulerAngles = new Vector3(0, maxYRot, 0);
-        }
+            turret.Rotate(Vector3.up * rotateSpeed * Time.deltaTime, Space.Self);
+            if (turret.localEulerAngles.y >= maxYRot)
+            {
+                turret.localEulerAngles = new Vector3(0, maxYRot, 0);
+            }
     }
 
     private void Down()
     {
-        turret.Rotate(Vector3.down * rotateSpeed * Time.deltaTime, Space.Self);
-        if (turret.localEulerAngles.y <= minYRot)
-        {
-            turret.localEulerAngles = new Vector3(0, minYRot, 0);
-        }
+            turret.Rotate(Vector3.down * rotateSpeed * Time.deltaTime, Space.Self);
+            if (turret.localEulerAngles.y <= minYRot)
+            {
+                turret.localEulerAngles = new Vector3(0, minYRot, 0);
+            }
     }
 
     public bool GetIsActive()
     {
         return isActive;
     }
-    
+
     public void SetActive()
     {
-        isActive = true;   
+        isActive = true;
     }
-    
+
     public void SetNotActive()
     {
         isActive = false;
@@ -120,4 +130,15 @@ public class MainTurret : MonoBehaviour
     {
         return Camera.main;
     }
+
+    private void OnEnable()
+    {
+        _controllerInput.Turret.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _controllerInput.Turret.Disable();
+    }
+
 }

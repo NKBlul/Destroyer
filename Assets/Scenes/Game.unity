@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 161124983}
   m_Layer: 6
   m_Name: Cube (2)
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 248029482}
   m_Layer: 6
   m_Name: Plane
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -598,6 +598,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 8916995872329649809, guid: a11f3cbb26d987543aa550cb0c3d2e85,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 8916995872329649810, guid: a11f3cbb26d987543aa550cb0c3d2e85,
         type: 3}
       propertyPath: m_RootOrder
@@ -817,7 +822,7 @@ GameObject:
   - component: {fileID: 467472386}
   m_Layer: 6
   m_Name: Cube (5)
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -1150,7 +1155,7 @@ GameObject:
   - component: {fileID: 630412353}
   m_Layer: 6
   m_Name: Cube (9)
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -1351,7 +1356,7 @@ GameObject:
   - component: {fileID: 769403574}
   m_Layer: 6
   m_Name: Cube (4)
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -1723,7 +1728,7 @@ GameObject:
   - component: {fileID: 1038010707}
   m_Layer: 6
   m_Name: Cube
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -1851,7 +1856,7 @@ GameObject:
   - component: {fileID: 1248915303}
   m_Layer: 6
   m_Name: Cube (1)
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -2236,7 +2241,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -1.3173484e-38, z: 7.05e-43, w: -4.951386e-38}
+  m_BoundingSphereOverride: {x: 0, y: 2.2106786e-24, z: 9.61e-43, w: 8.6215774e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -2550,7 +2555,7 @@ GameObject:
   - component: {fileID: 1638659432}
   m_Layer: 6
   m_Name: Cube (10)
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -3107,6 +3112,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveableCube
       objectReference: {fileID: 0}
+    - target: {fileID: 6206919898364238225, guid: ce4f145b6a7b0e7449081ba472491e5a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce4f145b6a7b0e7449081ba472491e5a, type: 3}
 --- !u!1 &1746583226
@@ -3432,7 +3442,7 @@ GameObject:
   - component: {fileID: 1901822943}
   m_Layer: 6
   m_Name: Cube (3)
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -3807,6 +3817,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 6672796250783155245, guid: daeeda549aa18a34893ce9d2a7f9e960,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7103883830116720466, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -3831,6 +3846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152111483413134283, guid: daeeda549aa18a34893ce9d2a7f9e960,
+        type: 3}
+      propertyPath: shipSpeed
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8550267849793957573, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}

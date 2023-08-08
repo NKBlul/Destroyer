@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoveShip : MonoBehaviour
 {
@@ -18,11 +19,17 @@ public class MoveShip : MonoBehaviour
 
     private float maxSpeed;
 
+    PlayerControls _controllerInput;
+    Vector2 _movement;
+
     void Awake()
     {
         myT = transform;
         maxSpeed = 100f;
 
+        _controllerInput = new PlayerControls();
+        _controllerInput.Ship.Move.performed += ctx => _movement = ctx.ReadValue<Vector2>();
+        _controllerInput.Ship.Move.canceled += ctx => _movement = Vector2.zero;
     }
 
     void Start()
@@ -37,19 +44,17 @@ public class MoveShip : MonoBehaviour
         transform.Translate(direction * shipSpeed * Time.deltaTime);
         Turn();
 
-        if (Input.GetKey(KeyCode.I))
+        if (_controllerInput.Ship.Acceleration.IsPressed())
         {
-            float acceleration = 3f;
-            shipSpeed += acceleration * Time.deltaTime;
+            shipSpeed += 3.0f * Time.deltaTime;
         }
-        else
+        if (_controllerInput.Ship.Deceleration.IsPressed())
         {
-            float deceleration = 3f;
-            shipSpeed -= deceleration * Time.deltaTime;
+            shipSpeed -= 3.0f * Time.deltaTime;
         }
 
-        
-        shipSpeed = Mathf.Clamp(shipSpeed, 3f, maxSpeed);
+
+        shipSpeed = Mathf.Clamp(shipSpeed, 0f, maxSpeed);
     }
 
     //private void FixedUpdate()
@@ -77,7 +82,7 @@ public class MoveShip : MonoBehaviour
     //makes the ship turn using the J and L keys
     void Turn()
     {
-        float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Turning");
+        float yaw = turnSpeed * Time.deltaTime * _movement.x;
         myT.Rotate(0, yaw, 0);
     }
 
@@ -102,4 +107,14 @@ public class MoveShip : MonoBehaviour
 
     //    shipSpeed = Mathf.Clamp(shipSpeed, 0f, maxSpeed);
     //}
+
+    private void OnEnable()
+    {
+        _controllerInput.Ship.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _controllerInput.Ship.Disable();
+    }
 }

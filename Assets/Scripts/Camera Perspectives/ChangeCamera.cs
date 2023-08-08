@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class ChangeCamera : MonoBehaviour
 {
@@ -20,9 +21,16 @@ public class ChangeCamera : MonoBehaviour
     public bool turretCam;
     public bool minigameCam;
 
+    // For New Input System
+    PlayerControls _controllerInput;
+
     private void Awake()
     {
         Instance = this;
+
+        _controllerInput = new PlayerControls();
+
+        _controllerInput.Default.ChangeCamera.performed += ctx => SwitchCamera();
     }
 
     private void Start()
@@ -42,29 +50,42 @@ public class ChangeCamera : MonoBehaviour
     {
 
         // Check for key input to switch cameras
-        if (Input.GetKeyDown(KeyCode.T) && 
-            FindObjectOfType<GunneryProximity>().GetInRad() == true)
-        {
-            SwitchCamera();
-        }
+        //if (Input.GetKeyDown(KeyCode.T) && 
+        //    FindObjectOfType<GunneryProximity>().GetInRad() == true)
+        //{
+        //    SwitchCamera();
+        //}
         CheckCamera();
         DisablePlayerCanvas();
     }
 
     public void SwitchCamera()
     {
-        // Deactivate the current camera
-        cameras[currentCameraIndex].gameObject.SetActive(false);
+        if (FindObjectOfType<GunneryProximity>().GetInRad() == true)
+        { 
+            // Deactivate the current camera
+            cameras[currentCameraIndex].gameObject.SetActive(false);
 
-        // Increment the camera index
-        currentCameraIndex++;
+            // Increment the camera index
+            currentCameraIndex++;
 
-        // Wrap around to the first camera if the index goes beyond the array size
-        if (currentCameraIndex >= cameras.Length)
-            currentCameraIndex = 0;
+            // Wrap around to the first camera if the index goes beyond the array size
+            if (currentCameraIndex >= cameras.Length)
+                currentCameraIndex = 0;
 
-        // Activate the new camera
-        ActivateCamera(currentCameraIndex);
+            // Activate the new camera
+            ActivateCamera(currentCameraIndex);
+        }
+    }
+
+    private void OnEnable()
+    {
+        _controllerInput.Default.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _controllerInput.Default.Disable();
     }
 
     private void ActivateCamera(int index)

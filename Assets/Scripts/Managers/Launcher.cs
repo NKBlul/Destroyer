@@ -6,6 +6,8 @@ using Photon.Pun;
 using TMPro;
 using Photon.Realtime;
 using System.Linq;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -44,14 +46,14 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.AutomaticallySyncScene = true;
 	}
 
-    private void Update()
-    {
-        if (Input.anyKeyDown && buttonPressed == false && onMaster == true)
+	private void Update()
+	{
+		if (Keyboard.current.anyKey.wasPressedThisFrame && buttonPressed == false && onMaster == true)
 		{
 			buttonPressed = true;
-            PhotonNetwork.JoinLobby();
-        }
-    }
+		    PhotonNetwork.JoinLobby();
+		}
+	}
 
 	private void FadeOutLogo()
 	{

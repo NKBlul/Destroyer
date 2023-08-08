@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using UnityEngine.InputSystem;
-//using static UnityEditorInternal.ReorderableList;
 
 public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 {
@@ -41,13 +40,6 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 	float currentHealth = maxHealth;
 
 	PlayerManager playerManager;
-	//public GameObject shipCamera;
- //   public GameObject turretCamera;
-
- //   public GameObject minigameCamera;
-
-
-
 
     // New Input System variables
     Vector2 _movement, _lookDir;
@@ -103,32 +95,26 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
             Cursor.visible = false;
             CrossHair.SetActive(true);
         }
-
         else if (ChangeCamera.Instance.minigameCam == true)
-		{
+        {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             CrossHair.SetActive(false);
         }
-
         else if (ChangeCamera.Instance.shipCam == true)
         {
-            Cursor.lockState= CursorLockMode.None;
-            Cursor.visible = false; 
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
             CrossHair.SetActive(false);
         }
-
         else if (ChangeCamera.Instance.turretCam == true)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = false;
             CrossHair.SetActive(true);
         }
-
-        
-
         else
-		{
+        {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
@@ -141,15 +127,6 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 	void Look()
 	{
-        //transform.Rotate(Vector3.up * Input.GetAxisRaw("Mouse X") * mouseSensitivity);
-
-        //verticalLookRotation += Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
-        //verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
-
-        //cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
-
-
-        // New Input System
         transform.Rotate(Vector3.up * _lookDir.x * mouseSensitivity);
 
 		verticalLookRotation += _lookDir.y * mouseSensitivity;
@@ -160,11 +137,6 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
     void Move()
 	{
-        //Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-
-        //moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
-
-        // New Input System
         Vector3 moveDir = new Vector3(_movement.x, 0, _movement.y);
 
         moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (_controllerInput.Default.Run.IsPressed() ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
@@ -172,12 +144,12 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
     void Jump()
 	{
-        // New Input System
 		if (ChangeCamera.Instance.playerCam == true)
 		{
             if (grounded)
             {
                 rb.AddForce(transform.up * jumpForce);
+
             }
         }     
     }

@@ -10,6 +10,7 @@ TagManager:
   - turret
   - PROXY_Gunnery
   - Ship
+  - Ground
   layers:
   - Default
   - TransparentFX

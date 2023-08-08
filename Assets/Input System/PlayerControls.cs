@@ -80,13 +80,22 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""324e0bc4-d75e-466c-882a-f3d2d68bdbe3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""74b0e4ad-793c-40e9-8eb2-56f63f214ee4"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -196,7 +205,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""88f08d50-5557-4093-83bd-14665d668071"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -258,6 +267,314 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""LookY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05bc590c-d53c-4954-a6de-34ee64944fee"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9789a7d5-45ed-4e69-9c18-22ba110c84cc"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Turret"",
+            ""id"": ""0b5c098a-4b93-4d3d-9b0a-43fc1e735c3a"",
+            ""actions"": [
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""76cf5734-4df2-4180-a9f6-60fbfc4f1ffc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TurnLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7f76cdf-c520-461c-a3f2-f831597830e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TurnRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6807942-2019-40dd-9308-a45a60151437"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""719e22ba-fb35-45d2-8da1-d9c5702c4a78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""dcf48134-ef70-47e2-a22b-4e98e49080fa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8cdd6695-a45b-4da8-9ffa-23cb0f44ca2c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6518f001-7269-403e-9e0e-2d85902a7eb7"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff6f5378-eec5-4e9d-b8bb-387966566cf0"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TurnLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""acb2b601-f65a-4ddb-bd5d-5a37a00405a8"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TurnLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00b2f795-9642-4e76-9a6f-e426c9058f21"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TurnRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb66b9aa-10ed-4f2c-9203-8727b53dc9b0"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TurnRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5bf7fec2-27e3-45ba-a6d5-206fea253a11"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb26a990-6c30-4e49-84cc-81549b6c66b1"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ceeeafd8-0825-4664-b6a1-fdc3b631af33"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95d234b9-cb18-472a-9b8f-d7dfc2af67b7"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Ship"",
+            ""id"": ""a179fcfb-3b91-462d-a3ed-9f4e12b0a4fe"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""1d46f31c-9c07-412d-87fa-501fa8643d63"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Acceleration"",
+                    ""type"": ""Button"",
+                    ""id"": ""55c6713c-ed2d-4d9e-bcfb-ac887861394d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Deceleration"",
+                    ""type"": ""Button"",
+                    ""id"": ""2fb37e86-d3db-4fb5-9923-563610c32d63"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f64e5acf-a39f-493a-9636-f14fcfd4f70b"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector [Keyboard]"",
+                    ""id"": ""6bf8f612-7ae4-4e7a-b593-9fb1d2ba9ed6"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""65e96f94-a66d-48c1-880a-8d73ddf9a991"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""0e259a07-899c-4816-828f-673d223584f2"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""073659bb-5a17-40c9-8558-22004a86ef37"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Acceleration"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9bbd804e-e6df-4896-8c64-8b21fb6419a9"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Acceleration"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d030778-fb95-4386-ab45-a85c76da030e"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Deceleration"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f7c72673-46cb-44cd-8b2e-de78d9b6158d"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Deceleration"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -272,6 +589,19 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Default_LookY = m_Default.FindAction("LookY", throwIfNotFound: true);
         m_Default_Jump = m_Default.FindAction("Jump", throwIfNotFound: true);
         m_Default_Run = m_Default.FindAction("Run", throwIfNotFound: true);
+        m_Default_ChangeCamera = m_Default.FindAction("ChangeCamera", throwIfNotFound: true);
+        // Turret
+        m_Turret = asset.FindActionMap("Turret", throwIfNotFound: true);
+        m_Turret_Shoot = m_Turret.FindAction("Shoot", throwIfNotFound: true);
+        m_Turret_TurnLeft = m_Turret.FindAction("TurnLeft", throwIfNotFound: true);
+        m_Turret_TurnRight = m_Turret.FindAction("TurnRight", throwIfNotFound: true);
+        m_Turret_LookUp = m_Turret.FindAction("LookUp", throwIfNotFound: true);
+        m_Turret_LookDown = m_Turret.FindAction("LookDown", throwIfNotFound: true);
+        // Ship
+        m_Ship = asset.FindActionMap("Ship", throwIfNotFound: true);
+        m_Ship_Move = m_Ship.FindAction("Move", throwIfNotFound: true);
+        m_Ship_Acceleration = m_Ship.FindAction("Acceleration", throwIfNotFound: true);
+        m_Ship_Deceleration = m_Ship.FindAction("Deceleration", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -339,6 +669,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_LookY;
     private readonly InputAction m_Default_Jump;
     private readonly InputAction m_Default_Run;
+    private readonly InputAction m_Default_ChangeCamera;
     public struct DefaultActions
     {
         private @PlayerControls m_Wrapper;
@@ -349,6 +680,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @LookY => m_Wrapper.m_Default_LookY;
         public InputAction @Jump => m_Wrapper.m_Default_Jump;
         public InputAction @Run => m_Wrapper.m_Default_Run;
+        public InputAction @ChangeCamera => m_Wrapper.m_Default_ChangeCamera;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -376,6 +708,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
+            @ChangeCamera.started += instance.OnChangeCamera;
+            @ChangeCamera.performed += instance.OnChangeCamera;
+            @ChangeCamera.canceled += instance.OnChangeCamera;
         }
 
         private void UnregisterCallbacks(IDefaultActions instance)
@@ -398,6 +733,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
+            @ChangeCamera.started -= instance.OnChangeCamera;
+            @ChangeCamera.performed -= instance.OnChangeCamera;
+            @ChangeCamera.canceled -= instance.OnChangeCamera;
         }
 
         public void RemoveCallbacks(IDefaultActions instance)
@@ -415,6 +753,146 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public DefaultActions @Default => new DefaultActions(this);
+
+    // Turret
+    private readonly InputActionMap m_Turret;
+    private List<ITurretActions> m_TurretActionsCallbackInterfaces = new List<ITurretActions>();
+    private readonly InputAction m_Turret_Shoot;
+    private readonly InputAction m_Turret_TurnLeft;
+    private readonly InputAction m_Turret_TurnRight;
+    private readonly InputAction m_Turret_LookUp;
+    private readonly InputAction m_Turret_LookDown;
+    public struct TurretActions
+    {
+        private @PlayerControls m_Wrapper;
+        public TurretActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Shoot => m_Wrapper.m_Turret_Shoot;
+        public InputAction @TurnLeft => m_Wrapper.m_Turret_TurnLeft;
+        public InputAction @TurnRight => m_Wrapper.m_Turret_TurnRight;
+        public InputAction @LookUp => m_Wrapper.m_Turret_LookUp;
+        public InputAction @LookDown => m_Wrapper.m_Turret_LookDown;
+        public InputActionMap Get() { return m_Wrapper.m_Turret; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TurretActions set) { return set.Get(); }
+        public void AddCallbacks(ITurretActions instance)
+        {
+            if (instance == null || m_Wrapper.m_TurretActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TurretActionsCallbackInterfaces.Add(instance);
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
+            @TurnLeft.started += instance.OnTurnLeft;
+            @TurnLeft.performed += instance.OnTurnLeft;
+            @TurnLeft.canceled += instance.OnTurnLeft;
+            @TurnRight.started += instance.OnTurnRight;
+            @TurnRight.performed += instance.OnTurnRight;
+            @TurnRight.canceled += instance.OnTurnRight;
+            @LookUp.started += instance.OnLookUp;
+            @LookUp.performed += instance.OnLookUp;
+            @LookUp.canceled += instance.OnLookUp;
+            @LookDown.started += instance.OnLookDown;
+            @LookDown.performed += instance.OnLookDown;
+            @LookDown.canceled += instance.OnLookDown;
+        }
+
+        private void UnregisterCallbacks(ITurretActions instance)
+        {
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
+            @TurnLeft.started -= instance.OnTurnLeft;
+            @TurnLeft.performed -= instance.OnTurnLeft;
+            @TurnLeft.canceled -= instance.OnTurnLeft;
+            @TurnRight.started -= instance.OnTurnRight;
+            @TurnRight.performed -= instance.OnTurnRight;
+            @TurnRight.canceled -= instance.OnTurnRight;
+            @LookUp.started -= instance.OnLookUp;
+            @LookUp.performed -= instance.OnLookUp;
+            @LookUp.canceled -= instance.OnLookUp;
+            @LookDown.started -= instance.OnLookDown;
+            @LookDown.performed -= instance.OnLookDown;
+            @LookDown.canceled -= instance.OnLookDown;
+        }
+
+        public void RemoveCallbacks(ITurretActions instance)
+        {
+            if (m_Wrapper.m_TurretActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ITurretActions instance)
+        {
+            foreach (var item in m_Wrapper.m_TurretActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_TurretActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public TurretActions @Turret => new TurretActions(this);
+
+    // Ship
+    private readonly InputActionMap m_Ship;
+    private List<IShipActions> m_ShipActionsCallbackInterfaces = new List<IShipActions>();
+    private readonly InputAction m_Ship_Move;
+    private readonly InputAction m_Ship_Acceleration;
+    private readonly InputAction m_Ship_Deceleration;
+    public struct ShipActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ShipActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Ship_Move;
+        public InputAction @Acceleration => m_Wrapper.m_Ship_Acceleration;
+        public InputAction @Deceleration => m_Wrapper.m_Ship_Deceleration;
+        public InputActionMap Get() { return m_Wrapper.m_Ship; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ShipActions set) { return set.Get(); }
+        public void AddCallbacks(IShipActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ShipActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ShipActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @Acceleration.started += instance.OnAcceleration;
+            @Acceleration.performed += instance.OnAcceleration;
+            @Acceleration.canceled += instance.OnAcceleration;
+            @Deceleration.started += instance.OnDeceleration;
+            @Deceleration.performed += instance.OnDeceleration;
+            @Deceleration.canceled += instance.OnDeceleration;
+        }
+
+        private void UnregisterCallbacks(IShipActions instance)
+        {
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @Acceleration.started -= instance.OnAcceleration;
+            @Acceleration.performed -= instance.OnAcceleration;
+            @Acceleration.canceled -= instance.OnAcceleration;
+            @Deceleration.started -= instance.OnDeceleration;
+            @Deceleration.performed -= instance.OnDeceleration;
+            @Deceleration.canceled -= instance.OnDeceleration;
+        }
+
+        public void RemoveCallbacks(IShipActions instance)
+        {
+            if (m_Wrapper.m_ShipActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IShipActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ShipActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ShipActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public ShipActions @Ship => new ShipActions(this);
     public interface IDefaultActions
     {
         void OnShoot(InputAction.CallbackContext context);
@@ -423,5 +901,20 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnLookY(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnChangeCamera(InputAction.CallbackContext context);
+    }
+    public interface ITurretActions
+    {
+        void OnShoot(InputAction.CallbackContext context);
+        void OnTurnLeft(InputAction.CallbackContext context);
+        void OnTurnRight(InputAction.CallbackContext context);
+        void OnLookUp(InputAction.CallbackContext context);
+        void OnLookDown(InputAction.CallbackContext context);
+    }
+    public interface IShipActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnAcceleration(InputAction.CallbackContext context);
+        void OnDeceleration(InputAction.CallbackContext context);
     }
 }
