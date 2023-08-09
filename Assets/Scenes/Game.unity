@@ -3849,6 +3849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8152111483413134283, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152111483413134283, guid: daeeda549aa18a34893ce9d2a7f9e960,
+        type: 3}
       propertyPath: shipSpeed
       value: 0
       objectReference: {fileID: 0}

@@ -8,6 +8,7 @@ using Photon.Realtime;
 using System.Linq;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.InputSystem.LowLevel;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -48,12 +49,17 @@ public class Launcher : MonoBehaviourPunCallbacks
 
 	private void Update()
 	{
-		if (Keyboard.current.anyKey.wasPressedThisFrame && buttonPressed == false && onMaster == true)
-		{
-			buttonPressed = true;
-		    PhotonNetwork.JoinLobby();
-		}
-	}
+        //if (Keyboard.current.anyKey.wasPressedThisFrame && buttonPressed == false && onMaster == true)
+        //{
+        //	buttonPressed = true;
+        //    PhotonNetwork.JoinLobby();
+        //}
+        if (Input.anyKeyDown && buttonPressed == false && onMaster == true)
+        {
+            buttonPressed = true;
+            PhotonNetwork.JoinLobby();
+        }
+    }
 
 	private void FadeOutLogo()
 	{

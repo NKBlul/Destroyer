@@ -15,9 +15,11 @@ public class MainTurret : MonoBehaviour
 
     public bool isActive;
 
-    private float minZRot = 180;
-    private float maxZRot = 359;
-    private float minYRot = 1f;
+    //private float minZRot = 180;
+    //private float maxZRot = 359;
+    private float minZRot = 160;
+    private float maxZRot = 25;
+    private float minYRot = 355;
     private float maxYRot = 25;
     private Vector3 currentRotation;
     private Vector3 turretCurrentRotation;
@@ -77,38 +79,38 @@ public class MainTurret : MonoBehaviour
 
     void TurnLeft()
     {
-            transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime, Space.Self);
-            if (transform.localEulerAngles.y <= minZRot)
-            {
-                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, minZRot, transform.localEulerAngles.z);
-            }
+         transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime, Space.Self);
+         if (transform.localEulerAngles.y <= minZRot && transform.localEulerAngles.y >= maxZRot)
+         {
+             transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, minZRot, transform.localEulerAngles.z);
+         }
     }
 
     private void TurnRight()
     {
-            transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
-            if (transform.localEulerAngles.y >= maxZRot)
-            {
-                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, maxZRot, transform.localEulerAngles.z);
-            }
+         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
+         if (transform.localEulerAngles.y >= maxZRot && transform.localEulerAngles.y <= minZRot)
+         {
+             transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, maxZRot, transform.localEulerAngles.z);
+         }
     }
 
     private void Up()
     {
-            turret.Rotate(Vector3.up * rotateSpeed * Time.deltaTime, Space.Self);
-            if (turret.localEulerAngles.y >= maxYRot)
-            {
-                turret.localEulerAngles = new Vector3(0, maxYRot, 0);
-            }
+        turret.Rotate(Vector3.up * rotateSpeed * Time.deltaTime, Space.Self);
+        if (turret.localEulerAngles.y >= maxYRot && turret.localEulerAngles.y <= minYRot)
+        {
+            turret.localEulerAngles = new Vector3(0, maxYRot, 0);
+        }
     }
 
     private void Down()
     {
-            turret.Rotate(Vector3.down * rotateSpeed * Time.deltaTime, Space.Self);
-            if (turret.localEulerAngles.y <= minYRot)
-            {
-                turret.localEulerAngles = new Vector3(0, minYRot, 0);
-            }
+        turret.Rotate(Vector3.down * rotateSpeed * Time.deltaTime, Space.Self);
+        if (turret.localEulerAngles.y <= minYRot && turret.localEulerAngles.y >= maxYRot)
+        {
+            turret.localEulerAngles = new Vector3(0, minYRot, 0);
+        }
     }
 
     public bool GetIsActive()
