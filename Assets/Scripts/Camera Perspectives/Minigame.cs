@@ -20,6 +20,7 @@ public class Minigame : MonoBehaviour
         if (onCount == wireCount)
         {
             //all connected
+            BaseSystems.instance.RecoverHealth();
         }
     }
 }
