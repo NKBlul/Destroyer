@@ -26,7 +26,7 @@ public class EnemyControllerAI : BaseEnemy
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
-    int damage = 10;
+    int damage = 1;
 
     //states
     public float sightRange, attackRange;
