@@ -57,6 +57,7 @@ public class ChangeCamera : MonoBehaviour
         //}
         CheckCamera();
         DisablePlayerCanvas();
+        print(shipCam);
     }
 
     public void SwitchCamera()
@@ -190,6 +191,14 @@ public class ChangeCamera : MonoBehaviour
             shipCam = true;
             turretCam = false;
             minigameCam = false;
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                FindObjectOfType<MoveShip>().IncreaseShipSpeed();
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                FindObjectOfType<MoveShip>().DecreaseShipSpeed();
+            }
         }
         else if (cameras[currentCameraIndex] == cameras[2]) //turret cam
         {
@@ -197,6 +206,7 @@ public class ChangeCamera : MonoBehaviour
             shipCam = false;
             turretCam = true;
             minigameCam = false;
+       
         }
         else if (cameras[currentCameraIndex] == cameras[3]) //minigame cam
         {

@@ -10,6 +10,8 @@ public class MoveShip : MonoBehaviour
     [SerializeField] float shipSpeed = 5;
     [SerializeField] float turnSpeed = 60f;
 
+    [SerializeField] float shipIntervals = 5f;
+
    // public float acceleration = 100f;
     //public float deceleration = 10f;
     //public float brake = 70f;
@@ -18,6 +20,7 @@ public class MoveShip : MonoBehaviour
     private bool isOnPlatform = false;
 
     private float maxSpeed;
+    private float minSpeed;
 
     PlayerControls _controllerInput;
     Vector2 _movement;
@@ -25,7 +28,8 @@ public class MoveShip : MonoBehaviour
     void Awake()
     {
         myT = transform;
-        maxSpeed = 100f;
+        maxSpeed = 90f;
+        minSpeed = 0f;
 
         _controllerInput = new PlayerControls();
         _controllerInput.Ship.Move.performed += ctx => _movement = ctx.ReadValue<Vector2>();
@@ -42,6 +46,7 @@ public class MoveShip : MonoBehaviour
     {
         //commented out for now because its causing the player to moved cuz its dragged by the flooring 
         transform.Translate(direction * shipSpeed * Time.deltaTime);
+
         Turn();
 
         if (_controllerInput.Ship.Acceleration.IsPressed())
@@ -55,6 +60,26 @@ public class MoveShip : MonoBehaviour
 
 
         shipSpeed = Mathf.Clamp(shipSpeed, 0f, maxSpeed);
+    }
+
+    public void IncreaseShipSpeed()
+    {
+        if (shipSpeed >= maxSpeed)
+        {
+            shipSpeed = maxSpeed;
+        }
+
+        shipSpeed += shipIntervals;
+        print(shipSpeed);
+    }
+    public void DecreaseShipSpeed()
+    {
+        if (shipSpeed <= minSpeed)
+        {
+            shipSpeed = minSpeed;
+        }
+        shipSpeed -= shipIntervals;
+        print(shipSpeed);
     }
 
     //private void FixedUpdate()
