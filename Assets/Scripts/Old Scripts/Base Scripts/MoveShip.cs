@@ -77,7 +77,7 @@ public class MoveShip : MonoBehaviour
         }
 
         shipSpeed += shipIntervals;
-        print(shipSpeed);
+        //print(shipSpeed);
     }
     public void DecreaseShipSpeed()
     {
@@ -86,7 +86,7 @@ public class MoveShip : MonoBehaviour
             shipSpeed = minSpeed;
         }
         shipSpeed -= shipIntervals;
-        print(shipSpeed);
+        //print(shipSpeed);
     }
 
     //private void FixedUpdate()

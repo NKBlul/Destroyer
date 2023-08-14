@@ -144,6 +144,7 @@ public class EnemyControllerAI : BaseEnemy
         {
             //attack code here
             Debug.Log(BaseSystems.instance.m_Health);
+            UI.instance.EnableTextOnTime(UI.instance.attackWarning);
             BaseSystems.instance.TakeDamage(damage);
 
             alreadyAttacked = true;
