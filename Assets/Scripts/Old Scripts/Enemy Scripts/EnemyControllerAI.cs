@@ -26,7 +26,7 @@ public class EnemyControllerAI : BaseEnemy
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
-    int damage = 1;
+    int damage = 5;
 
     //states
     public float sightRange, attackRange;
@@ -143,6 +143,7 @@ public class EnemyControllerAI : BaseEnemy
         if (!alreadyAttacked)
         {
             //attack code here
+            Debug.Log(BaseSystems.instance.m_Health);
             BaseSystems.instance.TakeDamage(damage);
 
             alreadyAttacked = true;

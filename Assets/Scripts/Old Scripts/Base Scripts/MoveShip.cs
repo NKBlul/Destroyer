@@ -48,7 +48,14 @@ public class MoveShip : MonoBehaviour
         transform.Translate(direction * shipSpeed * Time.deltaTime);
 
         Turn();
-
+        if (!ChangeCamera.Instance.shipCam)
+        {
+            OnDisable();
+        }
+        else
+        {
+            OnEnable();
+        }
         if (_controllerInput.Ship.Acceleration.IsPressed())
         {
             shipSpeed += 3.0f * Time.deltaTime;
