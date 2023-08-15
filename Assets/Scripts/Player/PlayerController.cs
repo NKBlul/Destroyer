@@ -94,18 +94,24 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
             CrossHair.SetActive(true);
+            UI.instance.HUD.gameObject.SetActive(false);
+
         }
         else if (ChangeCamera.Instance.minigameCam == true)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             CrossHair.SetActive(false);
+            UI.instance.HUD.gameObject.SetActive(false);
+
         }
         else if (ChangeCamera.Instance.shipCam == true)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = false;
             CrossHair.SetActive(false);
+            UI.instance.HUD.gameObject.SetActive(false);
+
         }
         else if (ChangeCamera.Instance.turretCam == true)
         {
@@ -118,7 +124,7 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            UI.instance.HUD.gameObject.SetActive(false);
+            //UI.instance.HUD.gameObject.SetActive(false);
         }
 
 		if(transform.position.y < -10f) // Die if you fall out of the world
