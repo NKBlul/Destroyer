@@ -206,7 +206,6 @@ public class ChangeCamera : MonoBehaviour
             shipCam = false;
             turretCam = true;
             minigameCam = false;
-       
         }
         else if (cameras[currentCameraIndex] == cameras[3]) //minigame cam
         {
