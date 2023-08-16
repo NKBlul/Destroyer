@@ -11,6 +11,7 @@ TagManager:
   - PROXY_Gunnery
   - Ship
   - Ground
+  - Ladder
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
 	[SerializeField] GameObject enemy;
 
-	[SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime;
+	[SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime, climbSpeed;
 
 	public Rigidbody rigidbody;
 
@@ -33,8 +33,9 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 	public GameObject CrossHair;
 
 	Rigidbody rb;
+    private bool isClimbing = false;
 
-	PhotonView PV;
+    PhotonView PV;
 
 	const float maxHealth = 100f;
 	float currentHealth = maxHealth;
@@ -131,6 +132,17 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 		{
 			Die();
 		}
+
+        if (isClimbing)
+        {
+            float verticalInput = Input.GetAxis("Vertical"); // Get input for climbing
+
+            Vector3 climbDirection = new Vector3(0f, verticalInput, 0f);
+            Vector3 climbVelocity = climbDirection * climbSpeed;
+
+            // Move the player using Rigidbody's MovePosition method
+            rb.MovePosition(rb.position + climbVelocity * Time.fixedDeltaTime);
+        }
     }
 
 	void Look()
@@ -189,4 +201,23 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 	{
 		playerManager.Die();
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ladder"))
+        {
+            isClimbing = true;
+            rb.useGravity = false;
+            
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Ladder"))
+        {
+            isClimbing = false;
+            rb.useGravity = true; // Re-enable gravity when leaving the ladder
+        }
+    }
 }
