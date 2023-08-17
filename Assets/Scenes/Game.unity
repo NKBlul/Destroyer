@@ -1130,12 +1130,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7cd9d45e1561a64893116a9e75f141c, type: 3}
---- !u!20 &324438477 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8152111482524357838, guid: daeeda549aa18a34893ce9d2a7f9e960,
-    type: 3}
-  m_PrefabInstance: {fileID: 8152111482275486979}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &325339475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1996,12 +1990,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630412351}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!20 &632233439 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8152111482768113884, guid: daeeda549aa18a34893ce9d2a7f9e960,
-    type: 3}
-  m_PrefabInstance: {fileID: 8152111482275486979}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &721601437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4747,8 +4735,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameras:
   - {fileID: 1877591521}
-  - {fileID: 632233439}
-  - {fileID: 324438477}
+  - {fileID: 3376750981799536568}
+  - {fileID: 3376750981799536567}
   - {fileID: 168550940}
   playerCam: 0
   shipCam: 0
@@ -5058,7 +5046,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968308726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 39.2, z: 0}
+  m_LocalPosition: {x: 0, y: 30, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5444,6 +5432,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06d8a610d43fa5f479ee1c12c52eab73, type: 3}
+--- !u!20 &3376750981799536567 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7726327062115207913, guid: 06d8a610d43fa5f479ee1c12c52eab73,
+    type: 3}
+  m_PrefabInstance: {fileID: 3376750981799536566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &3376750981799536568 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8494253255547476343, guid: 06d8a610d43fa5f479ee1c12c52eab73,
+    type: 3}
+  m_PrefabInstance: {fileID: 3376750981799536566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5463407796736807330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5520,6 +5520,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1992971963789859554, guid: daeeda549aa18a34893ce9d2a7f9e960,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6088483362095001466, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -5544,6 +5549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538746518281078926, guid: daeeda549aa18a34893ce9d2a7f9e960,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6672796250783155245, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
@@ -5575,10 +5585,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8152111482275486981, guid: daeeda549aa18a34893ce9d2a7f9e960,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8152111483413134283, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8152111483413134283, guid: daeeda549aa18a34893ce9d2a7f9e960,
         type: 3}
@@ -5675,7 +5690,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8152111482275486980}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02cea7aec97aba748a6f3e6c1b80edcc, type: 3}
   m_Name: 

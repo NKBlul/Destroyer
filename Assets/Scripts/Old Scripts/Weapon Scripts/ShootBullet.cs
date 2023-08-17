@@ -9,6 +9,7 @@ public class ShootBullet : MonoBehaviour
     [SerializeField] public Transform bulletSpawn;
     [SerializeField] private GameObject bulletPrefab;
     private float bulletSpeed = 5f;
+    public AudioSource bulletSound;
 
     PhotonView pv;
 
@@ -53,6 +54,8 @@ public class ShootBullet : MonoBehaviour
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
+
+        bulletSound.Play();
     }
 
     private void OnEnable()
