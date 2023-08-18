@@ -10,13 +10,12 @@ public class MainTurret : MonoBehaviour
     [SerializeField] private GameObject turretAmmoPrefab;
     [SerializeField] private Transform turret;
     private float speed = 100f;
-    //private Vector3 rotateSpeed = new Vector3(0, 30, 0);
     private float rotateSpeed = 30f;
 
     public bool isActive;
 
-    //private float minZRot = 180;
-    //private float maxZRot = 359;
+    public AudioSource bulletSound;
+
     private float minZRot = 160;
     private float maxZRot = 25;
     private float minYRot = 355;
@@ -40,7 +39,7 @@ public class MainTurret : MonoBehaviour
 
     void Update()
     {
-        if (GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
+        if (/*GetIsActive() == true &&*/ ChangeCamera.Instance.turretCam == true)
         {
             //if (Input.GetKeyDown(KeyCode.Space))
             //{
@@ -67,8 +66,10 @@ public class MainTurret : MonoBehaviour
 
     private void Fire()
     {
-        if (GetIsActive() == true && ChangeCamera.Instance.turretCam == true)
+        if (/*GetIsActive() == true &&*/ ChangeCamera.Instance.turretCam == true)
         {
+            bulletSound.Play();
+
             GameObject shot = PhotonNetwork.Instantiate(turretAmmoPrefab.name, turretAmmoSpawn.position,
             turretAmmoSpawn.transform.rotation);
 

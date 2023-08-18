@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class MoveShip : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Vector3 direction = Vector3.forward;
-    [SerializeField] float shipSpeed = 5;
+    public Vector3 direction;
+    [SerializeField] float shipSpeed = 0;
     [SerializeField] float turnSpeed = 60f;
 
     [SerializeField] float shipIntervals = 5f;
@@ -27,6 +27,7 @@ public class MoveShip : MonoBehaviour
 
     void Awake()
     {
+        direction = Vector3.back;
         myT = transform;
         maxSpeed = 90f;
         minSpeed = 0f;
@@ -77,7 +78,7 @@ public class MoveShip : MonoBehaviour
         }
 
         shipSpeed += shipIntervals;
-        //print(shipSpeed);
+        print(shipSpeed);
     }
     public void DecreaseShipSpeed()
     {

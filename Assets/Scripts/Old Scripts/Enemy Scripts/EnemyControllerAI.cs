@@ -26,7 +26,7 @@ public class EnemyControllerAI : BaseEnemy
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
-    int damage = 5;
+    int damage = 10;
 
     //states
     public float sightRange, attackRange;
@@ -123,6 +123,7 @@ public class EnemyControllerAI : BaseEnemy
         //check if its out of map
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
+            Debug.Log("set");
             walkPointSet = true;
         }
     }

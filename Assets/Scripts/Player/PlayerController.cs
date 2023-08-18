@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            //UI.instance.HUD.gameObject.SetActive(false);
+            UI.instance.HUD.gameObject.SetActive(false);
         }
 
 		if(transform.position.y < -10f) // Die if you fall out of the world
