@@ -114,8 +114,8 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
             Cursor.visible = false;
             CrossHair.SetActive(false);
             UI.instance.HUD.gameObject.SetActive(false);
-            UI.instance.hpBar.gameObject.SetActive(false);
-            UI.instance.hpBorder.gameObject.SetActive(false);
+            UI.instance.hpBar.gameObject.SetActive(true);
+            UI.instance.hpBorder.gameObject.SetActive(true);
         }
         else if (ChangeCamera.Instance.turretCam == true)
         {
