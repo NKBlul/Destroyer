@@ -26,17 +26,18 @@ public class BaseSystems : MonoBehaviour
     void Update()
     {
         //Debug.Log("ship: " + m_Health);
-        CheckHealth();
+        //CheckHealth();
     }
 
     public void TakeDamage(int damage)
     {
         m_Health -= damage;
-        //CheckHealth();     
+        CheckHealth();     
     }
 
     private void CheckHealth() 
     {
+        UI.instance.hpBar.fillAmount = m_Health / m_MaxHealth;
         if (m_Health <= m_MaxHealth / 2)
         {
             //warning sign pop up

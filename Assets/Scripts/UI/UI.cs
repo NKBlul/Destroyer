@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     [SerializeField] public TextMeshProUGUI warning;
     [SerializeField] public TextMeshProUGUI attackWarning;
     [SerializeField] public Image HUD;
+    [SerializeField] public Image hpBar;
 
     private void Awake()
     {

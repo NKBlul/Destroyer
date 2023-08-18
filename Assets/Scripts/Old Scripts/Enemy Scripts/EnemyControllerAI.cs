@@ -119,11 +119,11 @@ public class EnemyControllerAI : BaseEnemy
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
+        Debug.DrawRay(walkPoint, -transform.up * 4f, Color.blue);
         //check if its out of map
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        if (Physics.Raycast(walkPoint, -transform.up, 4f, whatIsGround))
         {
-            Debug.Log("set");
+            
             walkPointSet = true;
         }
     }
