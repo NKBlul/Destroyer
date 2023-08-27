@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
@@ -29,5 +30,10 @@ public class UI : MonoBehaviour
     {
         text.gameObject.SetActive(true);
         StartCoroutine(TextTime(text));
+    }
+
+    public void LoadWinScene()
+    {
+
     }
 }

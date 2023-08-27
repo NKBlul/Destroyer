@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
         if (enemyLeft == 0)
         {
             //killed everyone
-            Debug.Log("Killed");
+            PhotonNetwork.LoadLevel(2);
         }
     }
 
