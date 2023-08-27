@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 {
@@ -155,7 +156,9 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
         if (enemyLeft == 0)
         {
             //killed everyone
-            PhotonNetwork.LoadLevel(2);
+            Debug.Log("Ded");
+            Launcher.Instance.Win();
+            //SceneManager.LoadScene(2);
         }
     }
 
