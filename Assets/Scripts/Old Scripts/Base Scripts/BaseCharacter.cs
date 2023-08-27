@@ -53,7 +53,7 @@ public class BaseCharacter : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
         //PhotonNetwork.Destroy(gameObject);

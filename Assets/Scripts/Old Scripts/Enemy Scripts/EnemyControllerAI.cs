@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class EnemyControllerAI : BaseEnemy
 {
@@ -165,5 +166,11 @@ public class EnemyControllerAI : BaseEnemy
         //sight range
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    protected override void Die()
+    {
+        PlayerController.Instance.enemyLeft -= 1;
+        base.Die();
     }
 }

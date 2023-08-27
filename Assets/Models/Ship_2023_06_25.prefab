@@ -12195,7 +12195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6228611945432480256}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f36666369a8394d993bb07b784c385, type: 3}
   m_Name: 
@@ -12205,6 +12205,7 @@ MonoBehaviour:
     type: 3}
   turret: {fileID: 7103883830116720466}
   isActive: 1
+  bulletSound: {fileID: 0}
 --- !u!1 &6251186098842107593
 GameObject:
   m_ObjectHideFlags: 0
@@ -14785,7 +14786,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7499023718689495421}
-  m_LocalRotation: {x: 3.5527137e-15, y: -7.6310575e-16, z: 0.00000005960467, w: 1}
+  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
   m_LocalPosition: {x: -0, y: 0.00000061035155, z: 1.385586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14793,7 +14794,7 @@ Transform:
   - {fileID: 8152111482524357832}
   m_Father: {fileID: 6088483362095001466}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
 --- !u!33 &1424154414686394899
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17408,13 +17409,14 @@ GameObject:
   - component: {fileID: 8152111483413134283}
   - component: {fileID: 1303681804522838544}
   - component: {fileID: 8152111482275486981}
-  m_Layer: 0
+  - component: {fileID: 2921563365036948439}
+  m_Layer: 8
   m_Name: Ship_2023_06_25
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8550267849793957573
 Transform:
   m_ObjectHideFlags: 0
@@ -17591,14 +17593,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9071225889078457471}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22bad1ed283f6f64aaad4ff4104fe638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: -1}
-  shipSpeed: 5
+  shipSpeed: 0
   turnSpeed: 20
+  shipIntervals: 5
 --- !u!114 &1303681804522838544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17620,10 +17623,24 @@ BoxCollider:
   m_GameObject: {fileID: 9071225889078457471}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 40, y: 55, z: 200}
   m_Center: {x: 0, y: 15.96, z: 24.92}
+--- !u!114 &2921563365036948439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071225889078457471}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cea7aec97aba748a6f3e6c1b80edcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Health: 100
+  m_DamageDealt: 20
 --- !u!1 &9073468061374660112
 GameObject:
   m_ObjectHideFlags: 0

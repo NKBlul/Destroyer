@@ -38,9 +38,9 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.TryGetComponent<EnemyControllerAI>(out EnemyControllerAI enemy))
         {
-            EnemyControllerAI.instance.TakeDamage(10);
+            enemy.TakeDamage(10);
         }
 
         pv.RPC(nameof(DestroyBullet), pv.Owner);

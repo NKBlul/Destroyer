@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
     // New Input System variables
     Vector2 _movement, _lookDir;
 
+    public int enemyLeft = 3;
+
 	void Awake()
 	{
 		Instance = this;
@@ -148,6 +150,12 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
 
             // Move the player using Rigidbody's MovePosition method
             rb.MovePosition(rb.position + climbVelocity * Time.fixedDeltaTime);
+        }
+
+        if (enemyLeft == 0)
+        {
+            //killed everyone
+            Debug.Log("Killed");
         }
     }
 

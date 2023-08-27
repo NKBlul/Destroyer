@@ -461,6 +461,7 @@ MonoBehaviour:
   climbSpeed: 3
   rigidbody: {fileID: -4918316454545339193}
   CrossHair: {fileID: 3591700022958075731}
+  enemyLeft: 3
 --- !u!1 &2260308657950722712
 GameObject:
   m_ObjectHideFlags: 0
