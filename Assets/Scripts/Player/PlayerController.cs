@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviourPunCallbacks/*, IDamageable*/
             //killed everyone
             Debug.Log("Ded");
             Launcher.Instance.Win();
-            //SceneManager.LoadScene(2);
+            SceneManager.LoadScene(2);
         }
     }
 
