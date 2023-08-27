@@ -18,7 +18,7 @@ public class MainTurret : MonoBehaviour
 
     private float minZRot = 160;
     private float maxZRot = 25;
-    private float minYRot = 355;
+    private float minYRot = 345;
     private float maxYRot = 25;
     private Vector3 currentRotation;
     private Vector3 turretCurrentRotation;
