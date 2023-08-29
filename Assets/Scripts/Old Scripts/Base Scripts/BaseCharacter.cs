@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BaseCharacter : MonoBehaviourPunCallbacks
 {
-    [SerializeField] public float m_Health = 100.0f;
+    [SerializeField] public float m_Health = 60.0f;
     [SerializeField] public float m_DamageDealt = 20.0f;
     [SerializeField] public float m_Speed = 5.0f;
     //[SerializeField] string m_CharacterRole = "Null";
