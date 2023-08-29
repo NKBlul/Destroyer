@@ -3,7 +3,737 @@ guid: cad2d53cf90d4364ca0837655f79c9a6
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 127mm cannon low2_DefaultMaterial_BaseMap (1)
+    second: {fileID: 2800000, guid: 4ac20d7ae43c4c2478072297c7084464, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 127mm cannon low2_DefaultMaterial_Normal (1)
+    second: {fileID: 2800000, guid: a5e6e76b9da2e9d4690b711a70f1a2ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Black_rod_Base_color
+    second: {fileID: 2800000, guid: cc132443a56383f478be1b175e89504f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Black_rod_Metallic
+    second: {fileID: 2800000, guid: 77abe72d9b2a0664892fe1ebbc8adfdc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Black_rod_Normal
+    second: {fileID: 2800000, guid: da56ffb3f13e9e04c9b980d96612d244, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Black_rod_Roughness
+    second: {fileID: 2800000, guid: 3e73d87fd30292746b471f919a5b78cf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Couch_Low_BC
+    second: {fileID: 2800000, guid: 5b14122b6142b0046a4dbe245de26211, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Couch_Low_N
+    second: {fileID: 2800000, guid: 00382b6b40581ed4e83acb9b6297068b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Deck_Rooms_Base_color
+    second: {fileID: 2800000, guid: c64dfa25a35c7194ea08f5ea5a72b4d5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Deck_Rooms_Metallic
+    second: {fileID: 2800000, guid: 9370b3ae9f1eb594b906c0beddf43297, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Deck_Rooms_Roughness
+    second: {fileID: 2800000, guid: 2977ea62e75db8e439b58c0a4b0ee0da, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Base_color
+    second: {fileID: 2800000, guid: 69e7d661de9226c42ba6ffca44d50365, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: af6bd609f249b1a4b955767d32c0a466, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 5812b1f1edd9fbc4987b01940d119e03, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: 362543dc53d651540a0cbac7573694c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Desk_Low_BC
+    second: {fileID: 2800000, guid: bb7f6db787c2edc45af5ee13566c734a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Desk_Low_N
+    second: {fileID: 2800000, guid: 31fb6c993a31d8c43b3f8e93b266e17c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Elevator_doors_Base_color
+    second: {fileID: 2800000, guid: ce13fc310bc37064bb487353687b4378, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Elevator_doors_Metallic
+    second: {fileID: 2800000, guid: b71c7f5886a09a14f8439ba01bbb942e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Elevator_doors_Roughness
+    second: {fileID: 2800000, guid: d4efa98391e68034bbeacd47119cd8c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Engine_AlbedoTransparency
+    second: {fileID: 2800000, guid: d338551783b499946ae0214650e52d48, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Engine_MetallicSmoothness
+    second: {fileID: 2800000, guid: abee8d69b667fa741aeaca3d0df4adf5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Engine_Normal
+    second: {fileID: 2800000, guid: b1ddd7c6013162a449a16960fbd98ff1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Engine_room_Base_color
+    second: {fileID: 2800000, guid: 4fc6c75b464d8e54ca70df8c809c1cbd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Engine_room_Metallic
+    second: {fileID: 2800000, guid: 739330850ec239a41a113355a0262458, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Engine_room_Normal
+    second: {fileID: 2800000, guid: 290a3cbf0f731c44ca969219fe1f7490, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Engine_room_Roughness
+    second: {fileID: 2800000, guid: 1e764586443d29243a478f5a2850ce91, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gauges0015_350
+    second: {fileID: 2800000, guid: 6b20a633cbb660f42970888b031e67a9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gauges0040_350
+    second: {fileID: 2800000, guid: d0f4593dcc930c048ae5c25a0d245a88, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gauges0088_350
+    second: {fileID: 2800000, guid: 2c340a694fc6973479b2373ed24c12b9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GenericFoodPackageV1_Low_BC
+    second: {fileID: 2800000, guid: 66dd771db4b7b3a4fb3043cd4cb13a73, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GenericFoodPackageV1_Low_N
+    second: {fileID: 2800000, guid: 3b77188a32bd4f949933765d4c5aab26, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GenericFoodPackageV2_Low_BC
+    second: {fileID: 2800000, guid: f1e58f221875f414d9f2246b60bd8704, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GenericFoodPackageV2_Low_N
+    second: {fileID: 2800000, guid: 561ac0c262048394b87f25e31cea619b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gunnery_room_Base_color
+    second: {fileID: 2800000, guid: 86de52a5f6e7efc4eb85f689385d58ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gunnery_room_Metallic
+    second: {fileID: 2800000, guid: 6fc2eb5e4f9207f49b7783e9d4ca2053, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gunnery_room_Roughness
+    second: {fileID: 2800000, guid: 8d2a816c820548e408257aa7a8d33b83, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Interior_BC
+    second: {fileID: 2800000, guid: ee332b809736b364ebe162dcd2326180, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Interior_N
+    second: {fileID: 2800000, guid: cabefca657f576144bf0f97c8e0f6e8e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Level 1_InteriorTextures_DefaultMaterial_BaseMap
+    second: {fileID: 2800000, guid: 99aa714f7bcf35442a6e5256e553db62, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Level 1_InteriorTextures_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 910cdd7fe75dc7f4eb4b71c3080e088e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: M_CNCPanel_D_V2
+    second: {fileID: 2800000, guid: 1d1eb67dea5f1404b81d3d9e957c7021, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: M_CNCPanel_N
+    second: {fileID: 2800000, guid: 7fd737dbb00bb3d42b8bfc80301b2013, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Box_Metallic
+    second: {fileID: 2800000, guid: 2b964670bdf95f746a1e87588377d26b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Box_Normal
+    second: {fileID: 2800000, guid: c14cf3ac046619a478b2d9ae202680dc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Box_Roughness
+    second: {fileID: 2800000, guid: 09a5039bc611f0e41a8fa8dfe9d704bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Deck.001_Base_color
+    second: {fileID: 2800000, guid: 5539914b22a9449448f57a015d5bc536, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Deck.001_Metallic
+    second: {fileID: 2800000, guid: cbf7abf8ac3c2ed42acb566af0ff6f23, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Deck.001_Normal
+    second: {fileID: 2800000, guid: 481ace6f8355d0245be4762221c80b9e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Deck.001_Roughness
+    second: {fileID: 2800000, guid: 97b67c30ab3218d4d932d7f7f685460d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Deck_Metallic
+    second: {fileID: 2800000, guid: 315c414bf9985bc4bab4215d6c544045, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Deck_Normal
+    second: {fileID: 2800000, guid: 31e7fd6b620c31640873cfe6b5ed84b3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Main_Deck_Roughness
+    second: {fileID: 2800000, guid: 4b7a3e206df407748b8f162123e8c366, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.002_Base_color
+    second: {fileID: 2800000, guid: a113d368176348747930bc76ef0d6646, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.002_Metallic
+    second: {fileID: 2800000, guid: ba745b4691c8f31438a94b4f1849d5a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.004_Base_color
+    second: {fileID: 2800000, guid: a355c56c1621bec4e8ae33a80d10d8b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.004_Metallic
+    second: {fileID: 2800000, guid: 248000795ab839d4b81afd9632ba5c9d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.004_Normal
+    second: {fileID: 2800000, guid: cbb3b42c476975c4db20a7902dfe30e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.004_Roughness
+    second: {fileID: 2800000, guid: f6ec71729ac9c95419f9de34fce9f5d6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material_Base_color
+    second: {fileID: 2800000, guid: 8a65b4e2421941d4781c5dc40bb15529, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material_Metallic
+    second: {fileID: 2800000, guid: e6ef75bcb762c6d419feaa9cfcfe78f8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material_Roughness
+    second: {fileID: 2800000, guid: d470f69cef4c67349a0fd9473f516019, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nav_ext_Base_color
+    second: {fileID: 2800000, guid: 715f4b56794cc7c4abab8ddf2a6dbb16, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nav_ext_Metallic
+    second: {fileID: 2800000, guid: 3afdf5a2a5e69a6438fde0b43bf6ad08, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nav_ext_Roughness
+    second: {fileID: 2800000, guid: f89faa3e37f4e1446aeadaeb31bec065, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nav_int_Base_color
+    second: {fileID: 2800000, guid: db9a7fd32b5f00c48ac9d5fdb700a3b6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nav_int_Metallic
+    second: {fileID: 2800000, guid: 47ffc3af3c8afef47aec369d713d600e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nav_int_Roughness
+    second: {fileID: 2800000, guid: c9d4c8f4a96eed749a753b0d08010cae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Oil Drum_Low_BC
+    second: {fileID: 2800000, guid: 13f2657f87cb5db4887a751347a34ddb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Oil Drum_Low_N
+    second: {fileID: 2800000, guid: 09c61e2fd3823d6499e8267ebb1439c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Palette_low_BC
+    second: {fileID: 2800000, guid: 33cfa2e3f30285f4eafabb13b49f002d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Railing_2_Base_color
+    second: {fileID: 2800000, guid: 6994cd582aa38d34b99f9c8efb54048e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Railing_2_Metallic
+    second: {fileID: 2800000, guid: 0bcfd20ded6ec824d9c5e82f471d751b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Railing_2_Roughness
+    second: {fileID: 2800000, guid: cdc3c8e804e80784cb6b013a52a20922, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Reciever_Base_color
+    second: {fileID: 2800000, guid: ebc2abccb9752d049a22f820777171be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Reciever_Metallic
+    second: {fileID: 2800000, guid: 32f02163b4d9a5649a5b1c520d969513, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Reciever_Normal
+    second: {fileID: 2800000, guid: 1f13423ccd585514faf72138ddc2aee6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Reciever_Roughness
+    second: {fileID: 2800000, guid: cafb030988aea084ca81b3519cf5da99, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RectangleCrate_Low_BC
+    second: {fileID: 2800000, guid: 2df5369f707ffae41ab43e2dba19360f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RectangleCrate_Low_N
+    second: {fileID: 2800000, guid: ae2a22dfdef5eae4ab3f0b972051e792, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Screen 1
+    second: {fileID: 2800000, guid: 6a5123c81f4b4cf44a0031ed5d7dbe29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Screen 3
+    second: {fileID: 2800000, guid: 7e143f69507073c4f97591d8220308c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Screen 4
+    second: {fileID: 2800000, guid: a21497c120081cf41afbe9768b6fccfe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Shell_Low_Shell_AlbedoTransparency_blue
+    second: {fileID: 2800000, guid: 05a0924ddabb00d46aeb7e6315ce1ce3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ShipHull_BaseColor
+    second: {fileID: 2800000, guid: b9d41ff45f102e947b0cda8d89e7b2f6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ShipHull_Metallic
+    second: {fileID: 2800000, guid: 49d6a6d1f9583564cae395305dc741bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ShipHull_Normal
+    second: {fileID: 2800000, guid: 4d1a322d93bc06c47b49f1d8b8bfe3bf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ShipHull_Roughness
+    second: {fileID: 2800000, guid: fb2b863d37db04f4b8e82c8a68082853, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Side_Deck_Metallic
+    second: {fileID: 2800000, guid: a940db67470e2a74086e14d73ab8cf61, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Side_Deck_Normal
+    second: {fileID: 2800000, guid: 1e60cfde427fe2043bbb9f1425556776, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Side_Deck_Roughness
+    second: {fileID: 2800000, guid: 9bc0395f5fbd99544bd285ee4a3dc579, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sliders for power grid_BC
+    second: {fileID: 2800000, guid: 05dd097ef4138ba43b10cfd18e660fc9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SquareCrate_Low_BC
+    second: {fileID: 2800000, guid: 197c943afe75a0a4db41bf25f9ec9afa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SquareCrate_Low_N
+    second: {fileID: 2800000, guid: c7b79119b61d19f41b8309852738ee05, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Straight piece_AirDuct_BC
+    second: {fileID: 2800000, guid: d402b6b275806f846a07fd655661207a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Straight piece_AirDuct_N
+    second: {fileID: 2800000, guid: 17dfa9c4c5f313541b75f6338da2112a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TEX_JunctionBox_Albedo_Transperancy
+    second: {fileID: 2800000, guid: 272bfbe549ab1f94b8b8551ec4bf79b1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TEX_JunctionBox_Normal
+    second: {fileID: 2800000, guid: 1932cd32ab49ef9498ee9ad20420496b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TEX_ShipLight_BaseColor
+    second: {fileID: 2800000, guid: 561e45f34b665244ca93db5ab22028d9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TEX_ShipLight_Normal
+    second: {fileID: 2800000, guid: e903eb198082ba24eb1cd54476953c7a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TEX_ShipLight_Roughness
+    second: {fileID: 2800000, guid: 2d260c389ea03b74fb0a053f771afec0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Upper_Deck_Metallic
+    second: {fileID: 2800000, guid: 73eb0a63be2380842a6cffaf52ac6e52, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Upper_Deck_Normal
+    second: {fileID: 2800000, guid: 82be6a8a034f6084cb43b50a744ae262, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Upper_Deck_Roughness
+    second: {fileID: 2800000, guid: 952a8b93d0e9f7d43a2e4b4629f8e38c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Upper_deck_assorted_Base_color
+    second: {fileID: 2800000, guid: 49a65568fd286e94c9de40a58044c34d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Upper_deck_assorted_Metallic
+    second: {fileID: 2800000, guid: 451dbb517a885eb4a8d3895691edafe4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Upper_deck_assorted_Roughness
+    second: {fileID: 2800000, guid: 8bc905ee54a9ace4c889c55ea538db4a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Vents0135_1_350
+    second: {fileID: 2800000, guid: d5f430d9f9821a742830d3f478d82bce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood plank_Low_BC
+    second: {fileID: 2800000, guid: 6a45bae827371b848b3cf76c63c6c92a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood plank_Low_N
+    second: {fileID: 2800000, guid: 6c2c3e334e3c8f448a6f2cbd55ad34d3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WoodFlooringAshSuperWhite001_NRM_1K
+    second: {fileID: 2800000, guid: 60800b06fbabad64283324770815ed0a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WoodFlooringAshSuperWhite001_flat
+    second: {fileID: 2800000, guid: 67506caf9105463419c9ad590985bd76, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Z Shape_Air Duct_BC
+    second: {fileID: 2800000, guid: 8bf8ed8838a3f48458fc302f97539bff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Z Shape_Air Duct_N
+    second: {fileID: 2800000, guid: 70ab82a31ce23d84b83e5df693287415, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: arrow-up-and-down-elevator-button-upload-and-download-icon-free-vector
+    second: {fileID: 2800000, guid: 5c041056ad2b9b4489ac6d51e2131b8f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabin_doors_Base_color
+    second: {fileID: 2800000, guid: 7e9530d62d981f740bdf63bfae025a38, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabin_doors_Metallic
+    second: {fileID: 2800000, guid: 5bf213cb5a4d8f6439f9baf90395b8f3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabin_doors_Normal
+    second: {fileID: 2800000, guid: 2a3846b7de43e83489e65a3236afb359, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabin_doors_Roughness
+    second: {fileID: 2800000, guid: fe83224ea61817f4798f190f8a9d9afb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: crate_AmmoBox_AlbedoTransparency
+    second: {fileID: 2800000, guid: eaf45c3f65f19c34b91642c5ec9b9e2d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: crate_AmmoBox_MetallicSmoothness
+    second: {fileID: 2800000, guid: a149035c2887ffd4fa5fb7948a747204, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: crate_AmmoBox_Normal
+    second: {fileID: 2800000, guid: 85084b9996e6612418c26f37c7249a9f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: elevator_main_arm_Base_color
+    second: {fileID: 2800000, guid: d570dc1425e1d6744a311bfded8aaa67, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: elevator_main_arm_Metallic
+    second: {fileID: 2800000, guid: abc6b6a3e09e9564e8c3ef56cae8d668, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: elevator_main_arm_Roughness
+    second: {fileID: 2800000, guid: 8e26f50227a25474081cee607475c9e8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: everytexture.com-stock-fabric-texture-00064
+    second: {fileID: 2800000, guid: aab25066e74a7e84d8f9e55f0827fd91, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: istockphoto-509075321-612x612
+    second: {fileID: 2800000, guid: e412c726dba85744a8364bfae1478c14, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe _Base_color
+    second: {fileID: 2800000, guid: e883934f03fdbc741a38d4bb17deaca7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe _Metallic
+    second: {fileID: 2800000, guid: 40534ea7350c49e40af3e531095c3d64, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe _Normal
+    second: {fileID: 2800000, guid: d63b356bd0f66074998bdf303d4fcb3e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe _Roughness
+    second: {fileID: 2800000, guid: a7f303d7141e395419d4dbcf21ca61a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe wheel _Base_color
+    second: {fileID: 2800000, guid: fc265b813da47914ea1be0d0e943d042, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe wheel _Metallic
+    second: {fileID: 2800000, guid: a3c724ff91743d44c83c8af8e49b56cf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe wheel _Normal
+    second: {fileID: 2800000, guid: eb116f86cb1ac714499adc4e86dd017a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pipe wheel _Roughness
+    second: {fileID: 2800000, guid: e2c341b861b1e7b4dac5796a7cdd34a7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: railing_Base_color
+    second: {fileID: 2800000, guid: 1beb8befd9af7e74f9be54f9bddc3fdb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: railing_Metallic
+    second: {fileID: 2800000, guid: a135d5e4cd31bce42a2b9bf28528e16e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: railing_Roughness
+    second: {fileID: 2800000, guid: 6790d5c46af22154e8bf58ccedf7b9ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rods_Base_color
+    second: {fileID: 2800000, guid: 10a0645b04e5fbf488fd715ba1573cc8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rods_Metallic
+    second: {fileID: 2800000, guid: 181e193cae1e3c44bba63145e48eec9a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rods_Normal
+    second: {fileID: 2800000, guid: f6fc83a6a2f739346b4292570e5a99dd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rods_Roughness
+    second: {fileID: 2800000, guid: 024a80d68abe14947963eeb9ec3966b0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: smokestack_Base_color
+    second: {fileID: 2800000, guid: d9b2c134d1a949448b574c5520117cf3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: smokestack_Metallic
+    second: {fileID: 2800000, guid: 733b75c9b920ef641a913aa4544333a7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: smokestack_Normal
+    second: {fileID: 2800000, guid: 25c5b930e28627749a1b7aa9d2763c80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: smokestack_Roughness
+    second: {fileID: 2800000, guid: 3c3a86e806b4aa44e9e7d447d3538298, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
